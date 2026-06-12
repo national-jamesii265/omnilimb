@@ -59,9 +59,17 @@
   footer{border-top:1px solid var(--line);margin-top:54px;padding:24px 0;color:var(--muted);font-size:13px;
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   .hidden{display:none}
-  .shot{margin:22px auto;max-width:920px}
+  .shots{position:relative;margin:22px 0}
+  .shots-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:10px}
+  .shots-track::-webkit-scrollbar{height:8px}
+  .shots-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  .shot{flex:0 0 100%;scroll-snap-align:center;margin:0}
+  @media(min-width:760px){.shot{flex-basis:calc(50% - 7px)}}
   .shot img{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
   .shot figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+  .shots-nav{display:flex;justify-content:center;gap:12px;margin-top:12px}
+  .shots-nav button{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:999px;width:42px;height:42px;cursor:pointer;font-size:20px;line-height:1}
+  .shots-nav button:hover{border-color:var(--brand2);transform:translateY(-1px)}
 </style>
 </head>
 <body>
@@ -108,9 +116,17 @@
 
   <h2 class="section-title" data-t="shotsTitle">See it in action</h2>
   <p class="section-sub" data-t="shotsSub">Real screenshots from the Omnilimb dashboard tab.</p>
-  <figure class="shot"><img src="assets/ui-search.jpg" alt="Omnilimb live skill search across markets" loading="lazy" /><figcaption data-t="shot1">Live skill search across markets — here a search for “PPT”.</figcaption></figure>
-  <figure class="shot"><img src="assets/ui-healthcheck.jpg" alt="Omnilimb per-skill health check and score breakdown" loading="lazy" /><figcaption data-t="shot2">One-click health check (体检): a transparent 0–100 score before you install.</figcaption></figure>
-  <figure class="shot"><img src="assets/ui-installed.jpg" alt="Omnilimb installed-skills management" loading="lazy" /><figcaption data-t="shot3">Manage installed skills — view, smoke-test, credentials, uninstall.</figcaption></figure>
+  <div class="shots">
+    <div class="shots-track" id="shotsTrack">
+      <figure class="shot"><img data-en="assets/ui-search.jpg" data-zh="assets/ui-search-zh.jpg" src="assets/ui-search.jpg" alt="Omnilimb live skill search across markets" loading="lazy" /><figcaption data-t="shot1">Live skill search across markets — here a search for “PPT”.</figcaption></figure>
+      <figure class="shot"><img data-en="assets/ui-healthcheck.jpg" data-zh="assets/ui-healthcheck-zh.jpg" src="assets/ui-healthcheck.jpg" alt="Omnilimb per-skill health check and score breakdown" loading="lazy" /><figcaption data-t="shot2">One-click health check (体检): a transparent 0–100 score before you install.</figcaption></figure>
+      <figure class="shot"><img data-en="assets/ui-installed.jpg" data-zh="assets/ui-installed-zh.jpg" src="assets/ui-installed.jpg" alt="Omnilimb installed-skills management" loading="lazy" /><figcaption data-t="shot3">Manage installed skills — view, smoke-test, credentials, uninstall.</figcaption></figure>
+    </div>
+    <div class="shots-nav">
+      <button type="button" id="shotsPrev" aria-label="Previous screenshot">‹</button>
+      <button type="button" id="shotsNext" aria-label="Next screenshot">›</button>
+    </div>
+  </div>
 
   <h2 class="section-title" id="start" data-t="startTitle">Get started</h2>
   <p class="section-sub" data-t="startSub">Install the plugin into your Hermes home and enable it.</p>
@@ -219,12 +235,28 @@ hermes plugins enable omnilimb</pre>
       b.classList.toggle("active", b.getAttribute("data-lang") === lang);
       b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
     });
+    document.querySelectorAll(".shot img[data-en]").forEach(function(im){
+      var s = im.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+      if (s) im.setAttribute("src", s);
+    });
     try { localStorage.setItem("omnilimb.lang", lang); } catch(e){}
   }
   document.querySelectorAll(".langsw button").forEach(function(b){
     b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
   });
   setLang(pick());
+  (function(){
+    var track = document.getElementById("shotsTrack");
+    if (!track) return;
+    function step(dir){
+      var slide = track.querySelector(".shot");
+      var w = slide ? slide.getBoundingClientRect().width + 14 : track.clientWidth;
+      track.scrollBy({ left: dir * w, behavior: "smooth" });
+    }
+    var p = document.getElementById("shotsPrev"), n = document.getElementById("shotsNext");
+    if (p) p.addEventListener("click", function(){ step(-1); });
+    if (n) n.addEventListener("click", function(){ step(1); });
+  })();
 })();
 </script>
 </body>

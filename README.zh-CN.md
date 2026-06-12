@@ -145,24 +145,15 @@ UI 会自动跟随当前仪表盘的主题与语言。
 
 ### 实际效果
 
-搜索任意主题 —— 这里是对 **PPT** 的一次实时 ClawHub 全市场搜索:
+实时技能搜索、一键**体检**(透明的 0–100 分)、已安装技能管理 —— 都在仪表盘标签页里(点击放大):
 
-<p align="center">
-  <img src="docs/assets/ui-search.jpg" alt="Omnilimb 仪表盘:实时搜索 PPT 技能" width="90%" />
-</p>
-
-安装前一键**体检** —— 透明的、基于规则的 0–100 分,覆盖可信度、完整性、
-Hermes 兼容性、维护度与安全:
-
-<p align="center">
-  <img src="docs/assets/ui-healthcheck.jpg" alt="Omnilimb 单技能体检与评分明细" width="90%" />
-</p>
-
-管理你装过的一切 —— 查看/编辑、冒烟测试、凭据、导入/导出、卸载:
-
-<p align="center">
-  <img src="docs/assets/ui-installed.jpg" alt="Omnilimb 已安装技能管理" width="90%" />
-</p>
+<table>
+<tr>
+<td width="33%" valign="top"><a href="docs/assets/ui-search-zh.jpg"><img src="docs/assets/ui-search-zh.jpg" alt="实时搜索 PPT 技能"/></a><br/><sub><b>搜索</b> —— 对「PPT」的实时 ClawHub 搜索。</sub></td>
+<td width="33%" valign="top"><a href="docs/assets/ui-healthcheck-zh.jpg"><img src="docs/assets/ui-healthcheck-zh.jpg" alt="单技能体检与评分明细"/></a><br/><sub><b>体检</b> —— 透明的 0–100 分。</sub></td>
+<td width="33%" valign="top"><a href="docs/assets/ui-installed-zh.jpg"><img src="docs/assets/ui-installed-zh.jpg" alt="已安装技能管理"/></a><br/><sub><b>已安装</b> —— 统一管理你装的技能。</sub></td>
+</tr>
+</table>
 
 > 🌐 项目站点:**[omnilimb.com](http://www.omnilimb.com)**
 

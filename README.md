@@ -150,26 +150,16 @@ The UI follows the active dashboard theme and language automatically.
 
 ### See it in action
 
-Search any topic — here a live ClawHub search for **PPT** across the marketplace:
+Live skill search, a one-click **health check (体检)** with a transparent 0–100
+score, and installed-skill management — all in the dashboard tab (click to enlarge):
 
-<p align="center">
-  <img src="docs/assets/ui-search.jpg" alt="Omnilimb dashboard: live skill search for PPT" width="90%" />
-</p>
-
-Run a one-click **health check (体检)** before you install — a transparent,
-rule-based 0–100 score across trust, completeness, Hermes-compatibility,
-maintenance and safety:
-
-<p align="center">
-  <img src="docs/assets/ui-healthcheck.jpg" alt="Omnilimb per-skill health check with score breakdown" width="90%" />
-</p>
-
-Manage everything you've installed — view/edit, smoke-test, credentials,
-import/export, uninstall:
-
-<p align="center">
-  <img src="docs/assets/ui-installed.jpg" alt="Omnilimb installed-skills management" width="90%" />
-</p>
+<table>
+<tr>
+<td width="33%" valign="top"><a href="docs/assets/ui-search.jpg"><img src="docs/assets/ui-search.jpg" alt="Live skill search for PPT across markets"/></a><br/><sub><b>Search</b> — live ClawHub results for “PPT”.</sub></td>
+<td width="33%" valign="top"><a href="docs/assets/ui-healthcheck.jpg"><img src="docs/assets/ui-healthcheck.jpg" alt="Per-skill health check with score breakdown"/></a><br/><sub><b>Health check</b> — transparent 0–100 score.</sub></td>
+<td width="33%" valign="top"><a href="docs/assets/ui-installed.jpg"><img src="docs/assets/ui-installed.jpg" alt="Installed-skills management"/></a><br/><sub><b>Installed</b> — manage everything you’ve added.</sub></td>
+</tr>
+</table>
 
 > 🌐 Project site: **[omnilimb.com](http://www.omnilimb.com)**
 
