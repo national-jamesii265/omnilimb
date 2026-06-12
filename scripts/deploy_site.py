@@ -4,8 +4,8 @@
 Credentials are read from the environment (or an untracked local config) and are
 NEVER hardcoded or committed. Required environment variables:
 
-    OMNILIMB_FTP_HOST   e.g. 47.251.181.92
-    OMNILIMB_FTP_USER   e.g. omnilimb
+    OMNILIMB_FTP_HOST   e.g. ftp.example.com
+    OMNILIMB_FTP_USER   e.g. your-ftp-user
     OMNILIMB_FTP_PASS   the FTP password
     OMNILIMB_FTP_PORT   optional, default 21
     OMNILIMB_FTP_DIR    optional remote web-root subdir (default: login directory)

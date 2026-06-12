@@ -1,29 +1,51 @@
-# Omnilimb — Hermes plugin
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="Omnilimb — give your Hermes agent hands & feet" width="100%" />
+</p>
 
-> Give your Hermes agent OpenClaw / ClawHub's hands and feet.
-> Run community skills, an isolated sandbox, a Playwright browser, and
-> multi-language runtimes — through a tiny structured-JSON tool surface, with
-> **zero extra LLM tokens** on the execution path.
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-36e0c0.svg"></a>
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-5b8cff.svg">
+  <img alt="Status" src="https://img.shields.io/badge/edition-free%20community-5b8cff.svg">
+  <img alt="Tokens" src="https://img.shields.io/badge/execution%20path-0%20extra%20LLM%20tokens-36e0c0.svg">
+  <a href="https://www.omnilimb.com"><img alt="Website" src="https://img.shields.io/badge/web-omnilimb.com-9aa4be.svg"></a>
+</p>
 
-Hermes is the brain. Omnilimb is the deterministic execution substrate. It
-never calls a model itself on the execution path, has no conversation/memory of
-its own, and exposes a small set of structured-JSON tools plus an optional
-dashboard UI.
+# Omnilimb
 
-> ℹ️ Compatible with OpenClaw & ClawHub; not affiliated with them.
-> "Omnilimb" is an independent product (omnilimb.com).
+**Your Hermes agent is the brain. Omnilimb is the hands and feet.**
 
-## License & editions
+Omnilimb is a Hermes plugin that lets an agent *find, install, run and manage*
+[OpenClaw / ClawHub](https://clawhub.ai) community skills — and gives it an
+isolated sandbox, a real Playwright browser, and multi-language runtimes. Every
+capability is exposed as a small, **deterministic structured-JSON tool** the
+agent calls directly, so there are **zero extra LLM tokens on the execution
+path** and no second "agent loop" burning your budget.
 
-> **This is an early test / community edition, licensed under MIT — free to use.
-> A future stable version will adopt an AGPLv3 + commercial dual-license; please
-> plan accordingly.**
+> ℹ️ Compatible with OpenClaw &amp; ClawHub; not affiliated with them.
+> "Omnilimb" is an independent product ([omnilimb.com](https://www.omnilimb.com)).
 
-This repository contains the **free community edition** only. It is feature-
-complete for finding, installing, running, and managing OpenClaw / ClawHub
-skills locally.
+---
 
-## Tools
+## Why Omnilimb
+
+- ⚡ **Zero token overhead.** The execution path never calls a model. The agent
+  decides *once*; Omnilimb does the work deterministically and hands back JSON.
+- 🧰 **A whole toolbox, one small surface.** Eight tools cover skill discovery,
+  install, run, sandbox, browser, and runtimes — no sprawling API to learn.
+- 🛡️ **Safe by default.** Third-party skills run in a Docker sandbox with the
+  network off and automatic rollback. Path-traversal and zip-slip guarded.
+- 🔌 **No lock-in, no phone-home.** Search talks only to the market you pick.
+  Your code, caches and audit log stay on your machine.
+- 🪶 **Runs with or without Node.** The `native` backend is pure Python; the
+  `cli` backend bridges the real `openclaw` / `clawhub` binaries for full parity.
+- 🌐 **Bring your own market.** ClawHub, SkillHub, the official China mirror, a
+  GitHub index — or add your own adapter in a few lines.
+
+<p align="center">
+  <img src="docs/assets/architecture.svg" alt="How Omnilimb fits: Hermes brain → Omnilimb deterministic tools → skills/sandbox/browser/runtime" width="100%" />
+</p>
+
+## The tools
 
 Omnilimb registers these structured-JSON tools the agent can call:
 
@@ -38,40 +60,11 @@ Omnilimb registers these structured-JSON tools the agent can call:
 | `claw_skill_list` | List locally installed skills and their provenance |
 | `claw_skill_runs` | Recent run history for installed skills (diagnostics) |
 
-## Multiple skill markets
+<p align="center">
+  <img src="docs/assets/tools.svg" alt="The eight Omnilimb tools plus the optional dashboard UI" width="100%" />
+</p>
 
-Switch the skills marketplace with `omnilimb.market` (or `OMNILIMB_MARKET`):
-
-| Market | Source | Notes |
-|--------|--------|-------|
-| `clawhub` (default) | clawhub.ai | Official OpenClaw registry, HTTP API v1 |
-| `skillhub` | api.skillhub.cn | China-focused market; server-side keyword search, public zip download |
-| `clawhub-cn` | mirror-cn.clawhub.com | Official China mirror (Volcengine) |
-| `skillsmp` | skillsmp.com | GitHub-hosted skill index |
-
-You can add more markets in `~/.hermes/config.yaml` under `omnilimb.markets`
-(each is `{id, type, base_url, label}` where `type` is one of
-`clawhub | skillhub | clawhub_mirror | skillsmp`). Adding a new adapter class is
-a small change in `omnilimb/registries.py`.
-
-## Two interchangeable backends
-
-Set `omnilimb.backend` in `~/.hermes/config.yaml` (or `OMNILIMB_BACKEND`):
-
-| Mode | Behaviour |
-|------|-----------|
-| `cli` | Bridges to the real `openclaw` / `clawhub` CLIs. Best registry parity. Requires Node + OpenClaw installed. |
-| `native` | Fully decoupled Python substrate. No Node needed. Handles sandbox/browser/runtime + `git:`/local skill installs natively. |
-| `auto` (default) | `cli` if the `openclaw` binary is on PATH, else `native`. |
-
-## Install
-
-**As a directory plugin (simplest):**
-
-```bash
-cp -r omnilimb ~/.hermes/plugins/omnilimb
-hermes plugins enable omnilimb
-```
+## Quickstart
 
 **As a pip package:**
 
@@ -82,11 +75,77 @@ playwright install chromium        # one-time browser download
 hermes plugins enable omnilimb
 ```
 
+**As a directory plugin (simplest):**
+
+```bash
+cp -r omnilimb ~/.hermes/plugins/omnilimb
+hermes plugins enable omnilimb
+```
+
 Verify inside a session:
 
 ```
 /exo doctor
 ```
+
+### Try it locally — no Hermes, no GUI
+
+The plugin is a headless engine; the way to *feel* it is to call its tools and
+read the JSON they return:
+
+```bash
+python scripts/demo.py doctor                  # backend status
+python scripts/demo.py search github 5         # live ClawHub search
+python scripts/demo.py runtime python "print(6*7)"
+python scripts/demo.py sandbox "echo hi"
+python scripts/demo.py menu                    # interactive
+```
+
+## Pick your market
+
+Switch the skills marketplace with `omnilimb.market` (or `OMNILIMB_MARKET`):
+
+| Market | Source | Notes |
+|--------|--------|-------|
+| `clawhub` (default) | clawhub.ai | Official OpenClaw registry, HTTP API v1 |
+| `skillhub` | api.skillhub.cn | China-focused market; server-side search, public zip download |
+| `clawhub-cn` | mirror-cn.clawhub.com | Official China mirror (Volcengine) |
+| `skillsmp` | skillsmp.com | GitHub-hosted skill index |
+
+Add more under `omnilimb.markets` in `~/.hermes/config.yaml` (each is
+`{id, type, base_url, label}` where `type` is one of
+`clawhub | skillhub | clawhub_mirror | skillsmp`). A new adapter class in
+`omnilimb/registries.py` is all it takes to support a new kind of market.
+
+## Pick your backend
+
+Set `omnilimb.backend` in `~/.hermes/config.yaml` (or `OMNILIMB_BACKEND`):
+
+| Mode | Behaviour |
+|------|-----------|
+| `cli` | Bridges to the real `openclaw` / `clawhub` CLIs. Best registry parity. Requires Node + OpenClaw. |
+| `native` | Fully decoupled Python substrate. No Node. Handles sandbox/browser/runtime + `git:`/local skill installs natively. |
+| `auto` (default) | `cli` if the `openclaw` binary is on PATH, else `native`. |
+
+## Dashboard UI (optional)
+
+A dependency-free web UI ships in `dashboard/` for the Hermes dashboard. After
+enabling the plugin and restarting `hermes dashboard`, an **Omnilimb** tab
+appears (after *Skills*) with:
+
+- **Search** — discovery across markets (leaderboards, categories) + a per-skill
+  health check (体检).
+- **Installed** — view/edit `SKILL.md`, run, smoke-test, manage credentials,
+  check readiness, import/export, uninstall.
+- **Favorites** — bookmarked skills.
+- **Audit** — the optional JSONL audit log.
+- **Settings** — backend / market / cache / paths + diagnostics.
+
+The UI follows the active dashboard theme and language automatically.
+
+<p align="center">
+  <img src="docs/assets/website.png" alt="The Omnilimb website at omnilimb.com" width="92%" />
+</p>
 
 ## Configure (`~/.hermes/config.yaml`)
 
@@ -110,7 +169,7 @@ omnilimb:
 
 Settings changed from the dashboard's **Settings** tab are written to a separate
 overrides file (`omnilimb.overrides.json`), never to your hand-authored
-`config.yaml`. Resolution order is env > overrides > `config.yaml`.
+`config.yaml`. Resolution order is `env > overrides > config.yaml`.
 
 ## Security
 
@@ -118,41 +177,7 @@ Third-party skills are untrusted code. Prefer `claw_sandbox_exec` with
 `network: false` for anything you don't fully trust. Without Docker, sandbox
 calls run locally and are flagged `"sandboxed": false`. Skill file operations
 and uninstall are path-traversal guarded; archive extraction is zip-slip
-protected.
-
-## Dashboard UI (optional)
-
-A web UI ships in `dashboard/` for the Hermes dashboard (`hermes dashboard`).
-Install the plugin into your Hermes home and restart the dashboard:
-
-```bash
-cp -r omnilimb "$HERMES_HOME/plugins/omnilimb"   # default HERMES_HOME = ~/.hermes
-# restart: hermes dashboard
-```
-
-An **Omnilimb** tab appears (after Skills) with these sub-tabs:
-
-- **Search** — skill search/discovery across markets (toggle, leaderboards,
-  categories) and a per-skill health check (体检).
-- **Installed** — view/edit `SKILL.md`, run, smoke-test, manage credentials,
-  check readiness, import/export, and uninstall installed skills.
-- **Favorites** — bookmarked skills.
-- **Audit** — the JSONL audit log (toggled by `omnilimb.audit_log`).
-- **Settings** — backend / market / cache / paths, plus a diagnostics panel.
-
-The UI follows the active dashboard theme and language automatically. Backend
-routes are mounted at `/api/plugins/omnilimb/` on dashboard startup.
-
-## Try it locally (no Hermes, no GUI)
-
-```bash
-python scripts/demo.py doctor                  # backend status
-python scripts/demo.py list                    # installed skills
-python scripts/demo.py search github 5         # live ClawHub search
-python scripts/demo.py runtime python "print(6*7)"
-python scripts/demo.py sandbox "echo hi"
-python scripts/demo.py menu                     # interactive
-```
+protected. See [`SECURITY.md`](SECURITY.md) to report a vulnerability.
 
 ## Development
 
@@ -161,7 +186,20 @@ pip install -e ".[dev,browser]"
 pytest -q
 ```
 
-## License
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the architecture rules (the plugin
+never imports or modifies Hermes core, every handler returns JSON and never
+raises) and how to add a market or backend.
 
-MIT (this plugin) — see `LICENSE`. Not affiliated with OpenClaw / ClawHub.
-A future stable version will move to an AGPLv3 + commercial dual-license.
+## License &amp; editions
+
+> **This is an early test / community edition, licensed under MIT — free to use.
+> A future stable version will adopt an AGPLv3 + commercial dual-license; please
+> plan accordingly.**
+
+This repository contains the **free community edition** only. It is feature-
+complete for finding, installing, running, and managing OpenClaw / ClawHub
+skills locally. Commercial/Pro capabilities (skill → native Hermes conversion,
+AI curation, curated packs, auto-update, assistant console) are **not** part of
+this edition and are planned for a future Pro release under a separate license.
+
+MIT — see [`LICENSE`](LICENSE). Not affiliated with OpenClaw / ClawHub.

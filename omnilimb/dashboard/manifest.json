@@ -3,7 +3,7 @@
   "label": "Omnilimb",
   "description": "Run ClawHub/SkillHub skills, sandbox, browser & runtimes — operations panel.",
   "icon": "Wrench",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "tab": {
     "path": "/omnilimb",
     "position": "after:skills"
