@@ -4,6 +4,8 @@
 
 <p align="center">
   <a href="https://pypi.org/project/omnilimb/"><img alt="PyPI" src="https://img.shields.io/pypi/v/omnilimb.svg?color=5b8cff"></a>
+  <a href="https://pepy.tech/project/omnilimb"><img alt="Downloads" src="https://static.pepy.tech/badge/omnilimb"></a>
+  <a href="https://github.com/seanyang1983/omnilimb/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/seanyang1983/omnilimb?color=36e0c0&label=stars"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-36e0c0.svg"></a>
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-5b8cff.svg">
   <img alt="Status" src="https://img.shields.io/badge/edition-free%20community-5b8cff.svg">
