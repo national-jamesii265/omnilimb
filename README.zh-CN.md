@@ -8,12 +8,12 @@
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-5b8cff.svg">
   <img alt="Status" src="https://img.shields.io/badge/edition-free%20community-5b8cff.svg">
   <img alt="Tokens" src="https://img.shields.io/badge/execution%20path-0%20extra%20LLM%20tokens-36e0c0.svg">
-  <a href="http://www.omnilimb.com"><img alt="Website" src="https://img.shields.io/badge/web-omnilimb.com-9aa4be.svg"></a>
+  <a href="https://www.omnilimb.com"><img alt="Website" src="https://img.shields.io/badge/web-omnilimb.com-9aa4be.svg"></a>
 </p>
 
 <p align="center">
   <a href="README.md">English</a> · <b>简体中文</b>
-  &nbsp;|&nbsp; 🌐 <a href="http://www.omnilimb.com">omnilimb.com</a>
+  &nbsp;|&nbsp; 🌐 <a href="https://www.omnilimb.com">omnilimb.com</a>
 </p>
 
 # Omnilimb
@@ -27,7 +27,7 @@ JSON 工具**,由智能体直接调用——因此**执行路径上零额外 LLM
 "二级智能体循环"去烧你的预算。
 
 > ℹ️ 兼容 OpenClaw 与 ClawHub,但与其无官方关联。
-> "Omnilimb" 是独立产品([omnilimb.com](http://www.omnilimb.com))。
+> "Omnilimb" 是独立产品([omnilimb.com](https://www.omnilimb.com))。
 
 ```bash
 pip install omnilimb        # 然后:hermes plugins enable omnilimb
@@ -160,7 +160,7 @@ UI 会自动跟随当前仪表盘的主题与语言。
 </tr>
 </table>
 
-> 🌐 项目站点:**[omnilimb.com](http://www.omnilimb.com)**
+> 🌐 项目站点:**[omnilimb.com](https://www.omnilimb.com)**
 
 ## 配置(`~/.hermes/config.yaml`)
 

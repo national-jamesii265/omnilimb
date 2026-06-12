@@ -8,12 +8,12 @@
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-5b8cff.svg">
   <img alt="Status" src="https://img.shields.io/badge/edition-free%20community-5b8cff.svg">
   <img alt="Tokens" src="https://img.shields.io/badge/execution%20path-0%20extra%20LLM%20tokens-36e0c0.svg">
-  <a href="http://www.omnilimb.com"><img alt="Website" src="https://img.shields.io/badge/web-omnilimb.com-9aa4be.svg"></a>
+  <a href="https://www.omnilimb.com"><img alt="Website" src="https://img.shields.io/badge/web-omnilimb.com-9aa4be.svg"></a>
 </p>
 
 <p align="center">
   <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
-  &nbsp;|&nbsp; 🌐 <a href="http://www.omnilimb.com">omnilimb.com</a>
+  &nbsp;|&nbsp; 🌐 <a href="https://www.omnilimb.com">omnilimb.com</a>
 </p>
 
 # Omnilimb
@@ -28,7 +28,7 @@ agent calls directly, so there are **zero extra LLM tokens on the execution
 path** and no second "agent loop" burning your budget.
 
 > ℹ️ Compatible with OpenClaw &amp; ClawHub; not affiliated with them.
-> "Omnilimb" is an independent product ([omnilimb.com](http://www.omnilimb.com)).
+> "Omnilimb" is an independent product ([omnilimb.com](https://www.omnilimb.com)).
 
 ```bash
 pip install omnilimb        # then: hermes plugins enable omnilimb
@@ -166,7 +166,7 @@ score, and installed-skill management — all in the dashboard tab (click to enl
 </tr>
 </table>
 
-> 🌐 Project site: **[omnilimb.com](http://www.omnilimb.com)**
+> 🌐 Project site: **[omnilimb.com](https://www.omnilimb.com)**
 
 ## Configure (`~/.hermes/config.yaml`)
 
