@@ -70,6 +70,7 @@
   .shots-nav{display:flex;justify-content:center;gap:12px;margin-top:12px}
   .shots-nav button{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:999px;width:42px;height:42px;cursor:pointer;font-size:20px;line-height:1}
   .shots-nav button:hover{border-color:var(--brand2);transform:translateY(-1px)}
+  .diagram{display:block;width:100%;max-width:1000px;margin:20px auto 6px;border:1px solid var(--line);border-radius:14px}
 </style>
 </head>
 <body>
@@ -99,6 +100,7 @@
 
   <h2 class="section-title" data-t="whatTitle">The brain has Omnilimb; you keep the brain</h2>
   <p class="section-sub" data-t="whatSub">Hermes is the brain. Omnilimb is the deterministic execution substrate — it never calls a model itself on the execution path, and adds no extra LLM tokens. Compatible with OpenClaw &amp; ClawHub; not affiliated with them.</p>
+  <img class="diagram" data-en="assets/architecture.svg" data-zh="assets/architecture-zh.svg" src="assets/architecture.svg" alt="How Omnilimb fits: Hermes brain → Omnilimb deterministic tools → skills/sandbox/browser/runtime" loading="lazy" />
 
   <h2 class="section-title" id="features" data-t="featTitle">What it does</h2>
   <p class="section-sub" data-t="featSub">A small set of structured-JSON tools your agent can call directly.</p>
@@ -113,6 +115,7 @@
     <div class="card"><span class="ic">📝</span><h3 data-t="f8t">Audit log</h3><p data-t="f8d">An optional local JSONL audit log of tool calls you can view in the dashboard.</p></div>
     <div class="card"><span class="ic">🔁</span><h3 data-t="f9t">Two backends</h3><p data-t="f9d">Bridge to the real openclaw / clawhub CLIs, or run a fully decoupled native Python substrate — no Node needed.</p></div>
   </div>
+  <img class="diagram" data-en="assets/tools.svg" data-zh="assets/tools-zh.svg" src="assets/tools.svg" alt="The eight structured-JSON tools the agent calls directly" loading="lazy" />
 
   <h2 class="section-title" data-t="shotsTitle">See it in action</h2>
   <p class="section-sub" data-t="shotsSub">Real screenshots from the Omnilimb dashboard tab.</p>
@@ -235,7 +238,7 @@ hermes plugins enable omnilimb</pre>
       b.classList.toggle("active", b.getAttribute("data-lang") === lang);
       b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
     });
-    document.querySelectorAll(".shot img[data-en]").forEach(function(im){
+    document.querySelectorAll("img[data-en]").forEach(function(im){
       var s = im.getAttribute(lang === "zh" ? "data-zh" : "data-en");
       if (s) im.setAttribute("src", s);
     });
