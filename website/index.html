@@ -34,6 +34,8 @@
   .langsw button.active{background:var(--panel2);color:var(--txt)}
   .langsw button:focus-visible,.btn:focus-visible,.nav a:focus-visible{outline:2px solid var(--brand2);outline-offset:2px}
   .hero{padding:54px 0 24px;text-align:center}
+  .hero-banner{display:block;width:100%;max-width:1000px;margin:0 auto 22px}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .badge{display:inline-block;font-size:12px;letter-spacing:.4px;padding:5px 13px;border-radius:999px;border:1px solid #2c4a44;background:#0e1f1b;color:var(--brand2)}
   .hero h1{font-size:44px;line-height:1.12;margin:16px 0 12px}
   .hero p.sub{color:var(--muted);font-size:19px;max-width:680px;margin:0 auto}
@@ -89,8 +91,8 @@
   </header>
 
   <section class="hero">
-    <span class="badge" data-t="badge">Free &amp; open source · MIT · early community edition</span>
-    <h1 data-t="heroTitle">Give your Hermes agent hands &amp; feet.</h1>
+    <img class="hero-banner" data-en="assets/banner.svg" data-zh="assets/banner-zh.svg" src="assets/banner.svg" alt="Omnilimb — give your Hermes agent hands &amp; feet" />
+    <h1 class="visually-hidden" data-t="heroTitle">Give your Hermes agent hands &amp; feet.</h1>
     <p class="sub" data-t="heroSub">Omnilimb runs OpenClaw / ClawHub community skills, an isolated sandbox, a Playwright browser and multi-language runtimes as deterministic structured-JSON tools the agent calls directly — zero extra LLM tokens on the execution path.</p>
     <div class="cta">
       <a class="btn primary" href="https://github.com/seanyang1983/omnilimb" target="_blank" rel="noopener" data-t="ctaGithub">Get it on GitHub</a>
