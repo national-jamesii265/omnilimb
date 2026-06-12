@@ -24,3 +24,10 @@ _*_out.txt
 
 # Local deploy credentials — NEVER commit
 .deploy.local.json
+
+# Local credentials / environment — NEVER commit
+.env
+.env.*
+.pypirc
+*.pem
+*.key
