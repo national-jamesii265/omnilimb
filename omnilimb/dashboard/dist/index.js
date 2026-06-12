@@ -19,8 +19,8 @@
   // --- i18n --------------------------------------------------------------
   var STRINGS = {
     en: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "Convert to Hermes skills", convOne: "Convert", convAll: "Convert all", converting: "Converting…", convStatus: "Status", convIters: "Iterations", convFixes: "Fixes applied", convOut: "Output path", convProOnly: "Skill conversion is a Pro feature — activate Pro to use it.", convNone: "No convertible skills installed.", convErr: "Conversion failed", convPassed: "passed", convFailed: "failed", convUnchanged: "unchanged", convReconverted: "reconverted", convSkipped: "skipped (exists)", convFast: "Quick convert (deterministic)", convAi: "Convert to native Hermes skill (Pro)", convMode: "Mode", convModeDet: "deterministic", convModeAi: "ai-curated", convFellBack: "fell back to deterministic", convLibTitle: "Converted skills", convSource: "Source", convVersion: "Version", convFiles: "Files", convSkillMd: "SKILL.md", convInvocations: "Invocations", convOpen: "View", convBackLib: "← Converted", convGoLib: "View",
+      
+      
       statusErr: "Status error", loadingStatus: "Loading Omnilimb status…",
       refresh: "Refresh", license: "license", sandbox: "sandbox", workspace: "workspace",
       openclawCli: "openclaw CLI", yes: "yes", no: "no",
@@ -35,14 +35,14 @@
       category: "Category", allCategories: "All categories", sortBy: "Sort", sortRelevance: "Relevance", sortDownloads: "Hot", sortStars: "Stars", sortLatest: "Latest", prev: "Prev", next: "Next", page: "Page", downloads: "downloads", stars: "stars", resultsTotal: "results", verifiedBadge: "Verified",
       homepage: "Skill page", deps: "Requires", noDeps: "No extra deps",
       preview: "Preview", edit: "Edit", seats: "seats", tier: "tier",
-      runHistory: "Run history", runsTotal: "Total", runsSuccess: "Success", runsAvg: "Avg", runsLast: "Last", noRuns: "No runs recorded yet.", runsProOnly: "Run history is a Pro feature — activate Pro to view it.",
+      runHistory: "Run history", runsTotal: "Total", runsSuccess: "Success", runsAvg: "Avg", runsLast: "Last", noRuns: "No runs recorded yet.", 
       credentials: "API keys / credentials", credSet: "set", credSave: "Save", credClear: "Clear", credAdd: "Add", credKeyPh: "KEY NAME (e.g. OPENAI_API_KEY)", credValuePh: "value (key or URL)", credNone: "This skill declares no API keys, so it needs none. You can still add one manually below if you know it needs one.", credHint: "Credentials the skill itself uses for its external service (unrelated to Hermes's model). Left = key name (the env var the skill needs); right = its value. Example (OpenAI-compatible): OPENAI_API_KEY → your key; add an OPENAI_BASE_URL row → the endpoint URL.",
       envCheck: "Environment check", envBin: "bin", envKey: "key", envBinMissing: "not found on PATH", envKeyMissing: "not set",
       smokeTitle: "Smoke test", smokeRun: "Test run", smokeOk: "ran successfully", smokeExit: "exit code", smokeNeedsArgs: "the script likely needs arguments to run", smokeHint: "Most skills are agent playbooks — their scripts expect arguments, so an empty smoke run can fail even when the skill is fine.", collapse: "Collapse", expand: "Expand", manualTitle: "Skill butler manual", manualClose: "Close",
-      scoreTitle: "Skill health check", scoreRun: "Check", scoreAll: "Health-check all", scoreAllRun: "Checking…", alsoSearched: "Related terms also searched", scoreProOnly: "Skill scoring is a Pro feature — activate Pro to view it.", scoreCaps: "Capabilities", recoYes: "Recommended", recoCaution: "Use with caution", recoNo: "Not recommended",
+      scoreTitle: "Skill health check", scoreRun: "Check", scoreAll: "Health-check all", scoreAllRun: "Checking…", alsoSearched: "Related terms also searched", scoreCaps: "Capabilities", recoYes: "Recommended", recoCaution: "Use with caution", recoNo: "Not recommended",
       updateAvail: "Update available",
       tabSettings: "Settings", settingsTitle: "Settings", fieldAudit: "Audit logging", fieldCache: "Local cache", fieldTtl: "Discover cache TTL (s)", needRestart: "some changes apply on restart", diagTitle: "Diagnostics",
-      tabAgent: "Connect Hermes", agentTitle: "Connect Hermes", agentProOnly: "Connect Hermes is a Pro feature — activate Pro to use it.", agentHint: "Ask the skill butler in plain language, or have it do things for you — health-check your skills, recommend what to install, diagnose why one fails, scan the audit log. Pick a quick action below, or tap “More” for the full manual.", agentComposer: "Prompt for the agent…", agentOpenChat: "Open Hermes chat ↗", agentConn: "Connection", agentTermLabel: "Terminal", termShow: "Show terminal", termHide: "Hide terminal", assistTitle: "Skill butler", agentTermUnavail: "Terminal component failed to load — reload the page.", conn_connecting: "connecting…", conn_open: "connected", conn_closed: "disconnected", agentInputPh: "Ask the skill butler — or have it health-check, recommend or diagnose for you (Enter to send, Shift+Enter for newline)", agentSend: "Send", agentCopy: "Copy", agentCopied: "Copied ✓", qaInstalledHealth: "Health-check installed skills", qaTop10: "Recommend latest 10", qaDiagnose: "Diagnose installed skills' logs", qaAudit: "Scan audit & fix", qaMore: "More", cmdTitle: "Command box", cmdRun: "Run", cmdPlaceholder: "Code/command to run…", diagSlugPh: "skill slug (for Diagnose)",
+      
       workspaceHint: "Where skills are installed. Leave empty to use the default (~/.openclaw/workspace).",
       backendHint: "How skills run. Auto (recommended) picks the best available; CLI routes through the OpenClaw command line (needs OpenClaw installed); Native runs skills with the built-in runtime — no OpenClaw needed.",
       defaultMarket: "Default market", marketHint: "The skill marketplace used by default for search and discovery.",
@@ -53,7 +53,7 @@
       fieldShowStats: "Top stat cards", showStatsHint: "Show the five summary cards (installed, total calls, updates, favorites, health) at the top of the page.",
       exportSkills: "Export", importSkills: "Import", importDone: "Imported", favorite: "Favorite", recentSearch: "Recent", myFavorites: "My favorites",
       tabFavorites: "Favorites", favEmpty: "No favorites yet. Tap the heart on any skill to save it here.", favRemove: "Remove",
-      tabAudit: "Audit", auditTitle: "Audit log", auditNeedsPro: "Audit log unavailable.", auditDisabled: "Audit logging is off. Enable it in config.yaml: omnilimb.audit_log: true", noAudit: "No audit records yet.", filterTool: "Tool", filterStatus: "Status", statusAll: "All", statusOk: "OK only", statusFail: "Failed only", export: "Export", time: "Time",
+      tabAudit: "Audit", auditTitle: "Audit log", auditDisabled: "Audit logging is off. Enable it in config.yaml: omnilimb.audit_log: true", noAudit: "No audit records yet.", filterTool: "Tool", filterStatus: "Status", statusAll: "All", statusOk: "OK only", statusFail: "Failed only", export: "Export", time: "Time",
       cachedNotice: "Upstream unavailable — showing cached results (may be stale)",
       heroKicker: "OPENCLAW SKILL MARKETPLACE · AGENT-DRIVEN SUBSTRATE", heroSubtitle: "Let the Hermes brain drive the entire OpenClaw skill ecosystem — community skills, sandboxes, browsers and multi-language runtimes unified as deterministic structured-JSON tools the agent calls directly. No second AI loop, zero inference overhead — find it, install it, run it.", refreshAll: "Refresh", statBackend: "Backend", statMarket: "Market", statLicense: "License", statInstalled: "Installed", statHealth: "Health", healthyShort: "Healthy", attentionShort: "Attention", statPlan: "Plan", statFree: "Free", statSuccess: "Success rate", statMarkets: "Markets", statCalls: "calls", noRunsShort: "no runs yet", statCallsTotal: "Total calls", statUpdates: "Updates",
       from: "from", catAll: "All",
@@ -62,8 +62,8 @@
       cachedHint: "cached",
     },
     zh: {
-      proUpgrade: "升级 Pro", proIsPro: "已是 Pro 版", proTitle: "Omnilimb Pro", proIntro: "升级 Pro 解锁全部商业版功能。", proCurrentPlan: "当前版本", proFeaturesTitle: "Pro 功能", proFeatureConvert: "已转换技能库(查看/管理转换后的原生技能)", proFeatureAi: "AI 梳理转换(用模型重写技能文档)", proFeatureScoreAll: "一键全部体检(批量评分)", proFeatureAgent: "接入 Hermes(技能管家 + 终端)", proFeaturePacks: "精选技能包安装", proFeatureUpdate: "技能自动更新", proFeatureRuns: "运行记录与诊断", proBuyNow: "立即升级", proActivate: "激活", proKeyPh: "粘贴你的 license key", proActivated: "已激活 ✓", proActivateFail: "激活失败", proBack: "← 返回设置", proLockedAgent: "接入 Hermes 是 Pro 功能,升级后才能输入使用。",
-      convTitle: "转换为 Hermes 技能", convOne: "转换", convAll: "全部转换", converting: "转换中…", convStatus: "状态", convIters: "迭代次数", convFixes: "已应用修复", convOut: "输出路径", convProOnly: "技能转换是 Pro 功能 —— 开通 Pro 后可使用。", convNone: "没有可转换的已安装技能。", convErr: "转换失败", convPassed: "通过", convFailed: "失败", convUnchanged: "未变更", convReconverted: "已重新转换", convSkipped: "已跳过（已存在）", convFast: "快速转换（确定性）", convAi: "转化原生 Hermes 技能（Pro）", convMode: "模式", convModeDet: "确定性", convModeAi: "AI 梳理", convFellBack: "已回退到确定性", convLibTitle: "已转换技能", convSource: "来源", convVersion: "版本", convFiles: "文件", convSkillMd: "SKILL.md", convInvocations: "调用次数", convOpen: "查看详情", convBackLib: "← 已转换技能", convGoLib: "查看",
+      
+      
       statusErr: "状态错误", loadingStatus: "正在加载 Omnilimb 状态…",
       refresh: "刷新", license: "授权", sandbox: "沙箱", workspace: "工作区",
       openclawCli: "openclaw CLI", yes: "是", no: "否",
@@ -78,14 +78,14 @@
       category: "分类", allCategories: "全部分类", sortBy: "排序", sortRelevance: "相关度", sortDownloads: "热度", sortStars: "星标", sortLatest: "最新", prev: "上一页", next: "下一页", page: "第", downloads: "下载", stars: "星", resultsTotal: "个结果", verifiedBadge: "已验证",
       homepage: "技能页面", deps: "依赖", noDeps: "无额外依赖",
       preview: "预览", edit: "编辑", seats: "席位", tier: "档位",
-      runHistory: "运行记录", runsTotal: "总调用", runsSuccess: "成功率", runsAvg: "平均耗时", runsLast: "最近", noRuns: "暂无运行记录。", runsProOnly: "运行记录是 Pro 功能 —— 开通 Pro 后可查看。",
+      runHistory: "运行记录", runsTotal: "总调用", runsSuccess: "成功率", runsAvg: "平均耗时", runsLast: "最近", noRuns: "暂无运行记录。", 
       credentials: "API Key / 凭据", credSet: "已设置", credSave: "保存", credClear: "清除", credAdd: "添加", credKeyPh: "键名（如 OPENAI_API_KEY）", credValuePh: "值（密钥或地址）", credNone: "该技能没有声明需要 API Key，因此无需填写。若你确定它需要某个密钥，可在下方手动添加。", credHint: "这是技能自己调外部服务用的密钥（和 Hermes 用哪个模型无关）。左边「键名」填技能要的环境变量名，右边填它的值。例（OpenAI 兼容模式）：键名 OPENAI_API_KEY、值填你的密钥；再加一行键名 OPENAI_BASE_URL、值填接口地址。",
       envCheck: "环境检查", envBin: "命令", envKey: "密钥", envBinMissing: "PATH 中未找到", envKeyMissing: "未设置",
       smokeTitle: "冒烟测试", smokeRun: "试运行", smokeOk: "运行成功", smokeExit: "退出码", smokeNeedsArgs: "该脚本可能需要参数才能运行", smokeHint: "多数技能是给 Agent 用的「操作手册」——脚本需要带参数运行，所以空参数冒烟即使技能正常也可能失败。", collapse: "收起", expand: "展开", manualTitle: "技能管家说明书", manualClose: "关闭",
-      scoreTitle: "技能体检", scoreRun: "体检", scoreAll: "全部体检", scoreAllRun: "体检中…", alsoSearched: "已自动包含相关词的搜索结果", scoreProOnly: "技能评分是 Pro 功能 —— 开通 Pro 后可查看。", scoreCaps: "能力", recoYes: "推荐安装/使用", recoCaution: "谨慎", recoNo: "不推荐",
+      scoreTitle: "技能体检", scoreRun: "体检", scoreAll: "全部体检", scoreAllRun: "体检中…", alsoSearched: "已自动包含相关词的搜索结果", scoreCaps: "能力", recoYes: "推荐安装/使用", recoCaution: "谨慎", recoNo: "不推荐",
       updateAvail: "有可用更新",
       tabSettings: "设置", settingsTitle: "设置", fieldAudit: "审计日志记录", fieldCache: "本地缓存", fieldTtl: "发现页缓存有效期(秒)", needRestart: "部分改动重启后生效", diagTitle: "诊断",
-      tabAgent: "接入 Hermes", agentTitle: "接入 Hermes", agentProOnly: "「接入 Hermes」是 Pro 功能 —— 开通 Pro 后可使用。", agentHint: "用人话问技能管家，或让它帮你做事 —— 体检已装技能、推荐该装什么、诊断某个为什么失败、扫描审计问题。点下面的快捷动作，或点「更多」看完整说明书。", agentComposer: "给 Agent 的提示词…", agentOpenChat: "打开 Hermes 对话 ↗", agentConn: "连接", agentTermLabel: "终端", termShow: "展开终端", termHide: "收起终端", assistTitle: "技能管家", agentTermUnavail: "终端组件未加载成功 —— 请刷新页面。", conn_connecting: "连接中…", conn_open: "已连接", conn_closed: "已断开", agentInputPh: "问技能管家，或让它帮你体检 / 推荐 / 诊断 / 排查…（Enter 发送，Shift+Enter 换行）", agentSend: "发送", agentCopy: "复制", agentCopied: "已复制 ✓", qaInstalledHealth: "体检已装技能", qaTop10: "推荐最新 10 个", qaDiagnose: "诊断已安装的技能日志", qaAudit: "扫描审计并修复", qaMore: "更多", cmdTitle: "命令框", cmdRun: "运行", cmdPlaceholder: "要运行的代码/命令…", diagSlugPh: "技能 slug（用于诊断）",
+      
       workspaceHint: "技能的安装目录；留空使用默认（~/.openclaw/workspace）。",
       backendHint: "技能怎么运行。auto（推荐）自动选最合适的；cli 通过 OpenClaw 命令行运行（需已安装 OpenClaw）；native 用内置运行时直接跑，无需 OpenClaw。",
       defaultMarket: "默认市场", marketHint: "搜索和发现页默认使用的技能市场。",
@@ -96,7 +96,7 @@
       fieldShowStats: "顶部统计卡", showStatsHint: "在页面顶部显示五个概览方块（已安装、累计调用、可更新、收藏、健康）。",
       exportSkills: "导出", importSkills: "导入", importDone: "已导入", favorite: "收藏", recentSearch: "最近搜索", myFavorites: "我的收藏",
       tabFavorites: "收藏", favEmpty: "还没有收藏。点任意技能上的红心即可收藏到这里。", favRemove: "移除",
-      tabAudit: "审计", auditTitle: "审计日志", auditNeedsPro: "审计日志暂不可用。", auditDisabled: "审计未开启。在 config.yaml 中启用：omnilimb.audit_log: true", noAudit: "暂无审计记录。", filterTool: "工具", filterStatus: "状态", statusAll: "全部", statusOk: "仅成功", statusFail: "仅失败", export: "导出", time: "时间",
+      tabAudit: "审计", auditTitle: "审计日志", auditDisabled: "审计未开启。在 config.yaml 中启用：omnilimb.audit_log: true", noAudit: "暂无审计记录。", filterTool: "工具", filterStatus: "状态", statusAll: "全部", statusOk: "仅成功", statusFail: "仅失败", export: "导出", time: "时间",
       cachedNotice: "上游不可达 — 显示缓存结果（可能已过期）",
       heroKicker: "OPENCLAW 技能市场 · 智能体直驱底座", heroSubtitle: "让 Hermes 的大脑直接驱动整个 OpenClaw 技能生态 —— 社区技能、沙箱、浏览器与多语言运行时统一成确定性的结构化 JSON 工具,由智能体直接调用;不额外跑一层 AI、零推理消耗,找到即装、装完即跑。", refreshAll: "刷新", statBackend: "后端", statMarket: "市场", statLicense: "授权", statInstalled: "已安装", statHealth: "健康", healthyShort: "正常", attentionShort: "需关注", statPlan: "版本", statFree: "免费版", statSuccess: "运行成功率", statMarkets: "可用市场", statCalls: "次调用", noRunsShort: "暂无运行", statCallsTotal: "累计调用", statUpdates: "可更新",
       from: "源自", catAll: "全部",
@@ -105,129 +105,129 @@
       cachedHint: "已缓存",
     },
     "zh-hant": {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "轉換為 Hermes 技能", convOne: "轉換", convAll: "全部轉換", converting: "轉換中…", convStatus: "狀態", convIters: "迭代次數", convFixes: "已套用修復", convOut: "輸出路徑", convProOnly: "技能轉換是 Pro 功能 —— 開通 Pro 後可使用。", convNone: "沒有可轉換的已安裝技能。", convErr: "轉換失敗", convPassed: "通過", convFailed: "失敗", convUnchanged: "未變更", convReconverted: "已重新轉換", convSkipped: "已跳過（已存在）", convFast: "快速轉換（確定性）", convAi: "轉換為原生 Hermes 技能（Pro）", convMode: "模式", convModeDet: "確定性", convModeAi: "AI 梳理", convFellBack: "已回退到確定性", convLibTitle: "已轉換技能", convSource: "來源", convVersion: "版本", convFiles: "檔案", convSkillMd: "SKILL.md", convInvocations: "調用次數", convOpen: "查看詳情", convBackLib: "← 已轉換技能", convGoLib: "查看",
+      
+      
       statusErr: "狀態錯誤", loadingStatus: "正在載入 Omnilimb 狀態…",
       refresh: "重新整理", license: "授權", sandbox: "沙箱", workspace: "工作區",
       openclawCli: "openclaw CLI", yes: "是", no: "否",
-      tabSearch: "搜尋", tabPacks: "技能包", tabRuntime: "執行階段",
+      tabSearch: "搜尋", tabRuntime: "執行階段",
       searchTitle: "搜尋技能", searchPh: "搜尋技能，例如 github / 地圖",
       search: "搜尋", searching: "搜尋中…", install: "安裝", noResults: "無結果。",
       installed: "已安裝", installFail: "安裝失敗",
-      packsNeedPro: "精選技能包（安裝需 Pro）", packsPro: "精選技能包（Pro 已啟用）",
-      loadingPacks: "正在載入技能包…", noPacks: "暫無技能包。",
+      
+      
       runtimeTitle: "執行階段", run: "執行", running: "執行中…",
       tabInstalled: "已安裝", installedTitle: "已安裝技能", noInstalled: "尚未安裝任何技能。",
       installing: "安裝中…", health: "OpenClaw 狀態", healthOk: "已偵測到 OpenClaw", healthDown: "未偵測到 OpenClaw", nativeMode: "原生模式 — 無需 OpenClaw", recheck: "重新偵測",
     },
     ja: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "Hermes スキルに変換", convOne: "変換", convAll: "すべて変換", converting: "変換中…", convStatus: "ステータス", convIters: "反復回数", convFixes: "適用された修正", convOut: "出力パス", convProOnly: "スキル変換は Pro 機能です — Pro を有効化してご利用ください。", convNone: "変換可能なスキルがインストールされていません。", convErr: "変換に失敗しました", convPassed: "成功", convFailed: "失敗", convUnchanged: "変更なし", convReconverted: "再変換済み", convSkipped: "スキップ（既存）", convFast: "クイック変換（決定的）", convAi: "ネイティブ Hermes スキルに変換 (Pro)", convMode: "モード", convModeDet: "決定的", convModeAi: "AI キュレーション", convFellBack: "決定的にフォールバック", convLibTitle: "変換済みスキル", convSource: "ソース", convVersion: "バージョン", convFiles: "ファイル", convSkillMd: "SKILL.md", convInvocations: "呼び出し回数", convOpen: "詳細を見る", convBackLib: "← 変換済み", convGoLib: "表示",
+      
+      
       statusErr: "ステータスエラー", loadingStatus: "Omnilimb のステータスを読み込み中…",
       refresh: "更新", license: "ライセンス", sandbox: "サンドボックス", workspace: "ワークスペース",
       openclawCli: "openclaw CLI", yes: "はい", no: "いいえ",
-      tabSearch: "検索", tabPacks: "パック", tabRuntime: "ランタイム",
+      tabSearch: "検索", tabRuntime: "ランタイム",
       searchTitle: "スキル検索", searchPh: "スキルを検索 — 例: github / 地図",
       search: "検索", searching: "検索中…", install: "インストール", noResults: "結果なし。",
       installed: "インストール済み", installFail: "インストール失敗",
-      packsNeedPro: "厳選パック（インストールには Pro が必要）", packsPro: "厳選パック（Pro 有効）",
-      loadingPacks: "パックを読み込み中…", noPacks: "パックなし。",
+      
+      
       runtimeTitle: "ランタイム", run: "実行", running: "実行中…",
       tabInstalled: "インストール済み", installedTitle: "インストール済みスキル", noInstalled: "まだスキルがありません。",
       installing: "インストール中…", health: "OpenClaw 状態", healthOk: "OpenClaw を検出", healthDown: "OpenClaw が見つかりません", nativeMode: "ネイティブモード — OpenClaw 不要", recheck: "再確認",
     },
     ko: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "Hermes 스킬로 변환", convOne: "변환", convAll: "모두 변환", converting: "변환 중…", convStatus: "상태", convIters: "반복 횟수", convFixes: "적용된 수정", convOut: "출력 경로", convProOnly: "스킬 변환은 Pro 기능입니다 — Pro를 활성화하여 사용하세요.", convNone: "변환 가능한 설치된 스킬이 없습니다.", convErr: "변환 실패", convPassed: "통과", convFailed: "실패", convUnchanged: "변경 없음", convReconverted: "재변환됨", convSkipped: "건너뜀(존재함)", convFast: "빠른 변환(결정적)", convAi: "네이티브 Hermes 스킬로 변환 (Pro)", convMode: "모드", convModeDet: "결정적", convModeAi: "AI 정리", convFellBack: "결정적으로 폴백됨", convLibTitle: "변환된 스킬", convSource: "소스", convVersion: "버전", convFiles: "파일", convSkillMd: "SKILL.md", convInvocations: "호출 횟수", convOpen: "상세 보기", convBackLib: "← 변환됨", convGoLib: "보기",
+      
+      
       statusErr: "상태 오류", loadingStatus: "Omnilimb 상태 로딩 중…",
       refresh: "새로고침", license: "라이선스", sandbox: "샌드박스", workspace: "작업공간",
       openclawCli: "openclaw CLI", yes: "예", no: "아니오",
-      tabSearch: "검색", tabPacks: "팩", tabRuntime: "런타임",
+      tabSearch: "검색", tabRuntime: "런타임",
       searchTitle: "스킬 검색", searchPh: "스킬 검색 — 예: github / 지도",
       search: "검색", searching: "검색 중…", install: "설치", noResults: "결과 없음.",
       installed: "설치됨", installFail: "설치 실패",
-      packsNeedPro: "큐레이션 팩 (설치에 Pro 필요)", packsPro: "큐레이션 팩 (Pro 활성)",
-      loadingPacks: "팩 로딩 중…", noPacks: "팩 없음.",
+      
+      
       runtimeTitle: "런타임", run: "실행", running: "실행 중…",
       tabInstalled: "설치됨", installedTitle: "설치된 스킬", noInstalled: "아직 설치된 스킬이 없습니다.",
       installing: "설치 중…", health: "OpenClaw 상태", healthOk: "OpenClaw 감지됨", healthDown: "OpenClaw 없음", nativeMode: "네이티브 모드 — OpenClaw 불필요", recheck: "다시 확인",
     },
     de: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "In Hermes-Skills umwandeln", convOne: "Umwandeln", convAll: "Alle umwandeln", converting: "Wird umgewandelt…", convStatus: "Status", convIters: "Iterationen", convFixes: "Angewendete Korrekturen", convOut: "Ausgabepfad", convProOnly: "Skill-Umwandlung ist eine Pro-Funktion — Pro aktivieren, um sie zu nutzen.", convNone: "Keine umwandelbaren Skills installiert.", convErr: "Umwandlung fehlgeschlagen", convPassed: "bestanden", convFailed: "fehlgeschlagen", convUnchanged: "unverändert", convReconverted: "neu umgewandelt", convSkipped: "übersprungen (vorhanden)", convFast: "Schnellumwandlung (deterministisch)", convAi: "In nativen Hermes-Skill umwandeln (Pro)", convMode: "Modus", convModeDet: "deterministisch", convModeAi: "KI-kuratiert", convFellBack: "auf deterministisch zurückgefallen", convLibTitle: "Umgewandelte Skills", convSource: "Quelle", convVersion: "Version", convFiles: "Dateien", convSkillMd: "SKILL.md", convInvocations: "Aufrufe", convOpen: "Ansehen", convBackLib: "← Umgewandelt", convGoLib: "Ansehen",
+      
+      
       statusErr: "Statusfehler", loadingStatus: "Omnilimb-Status wird geladen…",
       refresh: "Aktualisieren", license: "Lizenz", sandbox: "Sandbox", workspace: "Arbeitsbereich",
       openclawCli: "openclaw CLI", yes: "ja", no: "nein",
-      tabSearch: "Suche", tabPacks: "Pakete", tabRuntime: "Laufzeit",
+      tabSearch: "Suche", tabRuntime: "Laufzeit",
       searchTitle: "Skills suchen", searchPh: "Skills suchen – z. B. github / Karte",
       search: "Suchen", searching: "Suche läuft…", install: "Installieren", noResults: "Keine Ergebnisse.",
       installed: "Installiert", installFail: "Installation fehlgeschlagen",
-      packsNeedPro: "Kuratierte Pakete (Installation erfordert Pro)", packsPro: "Kuratierte Pakete (Pro aktiv)",
-      loadingPacks: "Pakete werden geladen…", noPacks: "Keine Pakete.",
+      
+      
       runtimeTitle: "Laufzeit", run: "Ausführen", running: "Läuft…",
       tabInstalled: "Installiert", installedTitle: "Installierte Skills", noInstalled: "Noch keine Skills installiert.",
       installing: "Installiere…", health: "OpenClaw-Status", healthOk: "OpenClaw erkannt", healthDown: "OpenClaw nicht gefunden", nativeMode: "Native Modus — kein OpenClaw nötig", recheck: "Erneut prüfen",
     },
     es: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "Convertir a skills de Hermes", convOne: "Convertir", convAll: "Convertir todo", converting: "Convirtiendo…", convStatus: "Estado", convIters: "Iteraciones", convFixes: "Correcciones aplicadas", convOut: "Ruta de salida", convProOnly: "La conversión de skills es una función Pro — activa Pro para usarla.", convNone: "No hay skills convertibles instalados.", convErr: "Error de conversión", convPassed: "correcto", convFailed: "fallido", convUnchanged: "sin cambios", convReconverted: "reconvertido", convSkipped: "omitido (existe)", convFast: "Conversión rápida (determinista)", convAi: "Convertir a skill nativo de Hermes (Pro)", convMode: "Modo", convModeDet: "determinista", convModeAi: "curado por IA", convFellBack: "se recurrió a determinista", convLibTitle: "Skills convertidos", convSource: "Origen", convVersion: "Versión", convFiles: "Archivos", convSkillMd: "SKILL.md", convInvocations: "Invocaciones", convOpen: "Ver", convBackLib: "← Convertidos", convGoLib: "Ver",
+      
+      
       statusErr: "Error de estado", loadingStatus: "Cargando estado de Omnilimb…",
       refresh: "Actualizar", license: "licencia", sandbox: "sandbox", workspace: "espacio",
       openclawCli: "openclaw CLI", yes: "sí", no: "no",
-      tabSearch: "Buscar", tabPacks: "Paquetes", tabRuntime: "Runtime",
+      tabSearch: "Buscar", tabRuntime: "Runtime",
       searchTitle: "Buscar skills", searchPh: "Buscar skills — p. ej. github / mapa",
       search: "Buscar", searching: "Buscando…", install: "Instalar", noResults: "Sin resultados.",
       installed: "Instalado", installFail: "Error de instalación",
-      packsNeedPro: "Paquetes curados (instalar requiere Pro)", packsPro: "Paquetes curados (Pro activo)",
-      loadingPacks: "Cargando paquetes…", noPacks: "Sin paquetes.",
+      
+      
       runtimeTitle: "Runtime", run: "Ejecutar", running: "Ejecutando…",
       tabInstalled: "Instalados", installedTitle: "Skills instalados", noInstalled: "Aún no hay skills instalados.",
       installing: "Instalando…", health: "Estado de OpenClaw", healthOk: "OpenClaw detectado", healthDown: "OpenClaw no encontrado", nativeMode: "modo nativo — sin OpenClaw", recheck: "Reverificar",
     },
     fr: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "Convertir en skills Hermes", convOne: "Convertir", convAll: "Tout convertir", converting: "Conversion…", convStatus: "Statut", convIters: "Itérations", convFixes: "Corrections appliquées", convOut: "Chemin de sortie", convProOnly: "La conversion de skills est une fonction Pro — activez Pro pour l'utiliser.", convNone: "Aucun skill convertible installé.", convErr: "Échec de la conversion", convPassed: "réussi", convFailed: "échoué", convUnchanged: "inchangé", convReconverted: "reconverti", convSkipped: "ignoré (existe)", convFast: "Conversion rapide (déterministe)", convAi: "Convertir en skill Hermes natif (Pro)", convMode: "Mode", convModeDet: "déterministe", convModeAi: "curé par IA", convFellBack: "repli sur déterministe", convLibTitle: "Skills convertis", convSource: "Source", convVersion: "Version", convFiles: "Fichiers", convSkillMd: "SKILL.md", convInvocations: "Invocations", convOpen: "Voir", convBackLib: "← Convertis", convGoLib: "Voir",
+      
+      
       statusErr: "Erreur d'état", loadingStatus: "Chargement de l'état Omnilimb…",
       refresh: "Actualiser", license: "licence", sandbox: "sandbox", workspace: "espace",
       openclawCli: "openclaw CLI", yes: "oui", no: "non",
-      tabSearch: "Recherche", tabPacks: "Packs", tabRuntime: "Runtime",
+      tabSearch: "Recherche", tabRuntime: "Runtime",
       searchTitle: "Rechercher des skills", searchPh: "Rechercher des skills — ex. github / carte",
       search: "Rechercher", searching: "Recherche…", install: "Installer", noResults: "Aucun résultat.",
       installed: "Installé", installFail: "Échec de l'installation",
-      packsNeedPro: "Packs curés (installation nécessite Pro)", packsPro: "Packs curés (Pro actif)",
-      loadingPacks: "Chargement des packs…", noPacks: "Aucun pack.",
+      
+      
       runtimeTitle: "Runtime", run: "Exécuter", running: "Exécution…",
       tabInstalled: "Installés", installedTitle: "Skills installés", noInstalled: "Aucun skill installé pour l'instant.",
       installing: "Installation…", health: "État d'OpenClaw", healthOk: "OpenClaw détecté", healthDown: "OpenClaw introuvable", nativeMode: "mode natif — OpenClaw non requis", recheck: "Revérifier",
     },
     ru: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "Преобразовать в навыки Hermes", convOne: "Преобразовать", convAll: "Преобразовать все", converting: "Преобразование…", convStatus: "Статус", convIters: "Итерации", convFixes: "Применённые исправления", convOut: "Путь вывода", convProOnly: "Преобразование навыков — функция Pro. Активируйте Pro, чтобы использовать её.", convNone: "Нет установленных навыков для преобразования.", convErr: "Ошибка преобразования", convPassed: "пройдено", convFailed: "не удалось", convUnchanged: "без изменений", convReconverted: "преобразовано заново", convSkipped: "пропущено (существует)", convFast: "Быстрое преобразование (детерминированное)", convAi: "Преобразовать в нативный навык Hermes (Pro)", convMode: "Режим", convModeDet: "детерминированный", convModeAi: "курировано ИИ", convFellBack: "откат к детерминированному", convLibTitle: "Преобразованные навыки", convSource: "Источник", convVersion: "Версия", convFiles: "Файлы", convSkillMd: "SKILL.md", convInvocations: "Вызовы", convOpen: "Просмотр", convBackLib: "← Преобразованные", convGoLib: "Открыть",
+      
+      
       statusErr: "Ошибка статуса", loadingStatus: "Загрузка статуса Omnilimb…",
       refresh: "Обновить", license: "лицензия", sandbox: "песочница", workspace: "рабочая область",
       openclawCli: "openclaw CLI", yes: "да", no: "нет",
-      tabSearch: "Поиск", tabPacks: "Паки", tabRuntime: "Среда",
+      tabSearch: "Поиск", tabRuntime: "Среда",
       searchTitle: "Поиск навыков", searchPh: "Поиск навыков — напр. github / карта",
       search: "Искать", searching: "Поиск…", install: "Установить", noResults: "Нет результатов.",
       installed: "Установлено", installFail: "Ошибка установки",
-      packsNeedPro: "Подборки (установка требует Pro)", packsPro: "Подборки (Pro активен)",
-      loadingPacks: "Загрузка паков…", noPacks: "Нет паков.",
+      
+      
       runtimeTitle: "Среда", run: "Запустить", running: "Выполнение…",
       tabInstalled: "Установлено", installedTitle: "Установленные навыки", noInstalled: "Навыки ещё не установлены.",
       installing: "Установка…", health: "Состояние OpenClaw", healthOk: "OpenClaw обнаружен", healthDown: "OpenClaw не найден", nativeMode: "нативный режим — OpenClaw не нужен", recheck: "Проверить снова",
     },
     pt: {
-      proUpgrade: "Upgrade to Pro", proIsPro: "Pro active", proTitle: "Omnilimb Pro", proIntro: "Upgrade to Pro to unlock all commercial features.", proCurrentPlan: "Current plan", proFeaturesTitle: "Pro features", proFeatureConvert: "Converted-skills library (view/manage converted native skills)", proFeatureAi: "AI-curated conversion (rewrite skill docs with a model)", proFeatureScoreAll: "Batch health-check (score all at once)", proFeatureAgent: "Connect Hermes (skill butler + terminal)", proFeaturePacks: "Curated skill-pack install", proFeatureUpdate: "Skill auto-update", proFeatureRuns: "Run history & diagnostics", proBuyNow: "Upgrade now", proActivate: "Activate", proKeyPh: "Paste your license key", proActivated: "Activated ✓", proActivateFail: "Activation failed", proBack: "← Back to settings", proLockedAgent: "Connect Hermes is a Pro feature — upgrade to use the input.",
-      convTitle: "Converter em skills do Hermes", convOne: "Converter", convAll: "Converter tudo", converting: "Convertendo…", convStatus: "Estado", convIters: "Iterações", convFixes: "Correções aplicadas", convOut: "Caminho de saída", convProOnly: "A conversão de skills é um recurso Pro — ative o Pro para usá-la.", convNone: "Nenhum skill convertível instalado.", convErr: "Falha na conversão", convPassed: "aprovado", convFailed: "falhou", convUnchanged: "inalterado", convReconverted: "reconvertido", convSkipped: "ignorado (existe)", convFast: "Conversão rápida (determinística)", convAi: "Converter em skill nativo do Hermes (Pro)", convMode: "Modo", convModeDet: "determinística", convModeAi: "curado por IA", convFellBack: "voltou para determinística", convLibTitle: "Skills convertidos", convSource: "Origem", convVersion: "Versão", convFiles: "Arquivos", convSkillMd: "SKILL.md", convInvocations: "Invocações", convOpen: "Ver", convBackLib: "← Convertidos", convGoLib: "Ver",
+      
+      
       statusErr: "Erro de estado", loadingStatus: "Carregando estado do Omnilimb…",
       refresh: "Atualizar", license: "licença", sandbox: "sandbox", workspace: "workspace",
       openclawCli: "openclaw CLI", yes: "sim", no: "não",
-      tabSearch: "Buscar", tabPacks: "Pacotes", tabRuntime: "Runtime",
+      tabSearch: "Buscar", tabRuntime: "Runtime",
       searchTitle: "Buscar skills", searchPh: "Buscar skills — ex. github / mapa",
       search: "Buscar", searching: "Buscando…", install: "Instalar", noResults: "Sem resultados.",
       installed: "Instalado", installFail: "Falha na instalação",
-      packsNeedPro: "Pacotes curados (instalar requer Pro)", packsPro: "Pacotes curados (Pro ativo)",
-      loadingPacks: "Carregando pacotes…", noPacks: "Sem pacotes.",
+      
+      
       runtimeTitle: "Runtime", run: "Executar", running: "Executando…",
       tabInstalled: "Instalados", installedTitle: "Skills instalados", noInstalled: "Nenhum skill instalado ainda.",
       installing: "Instalando…", health: "Estado do OpenClaw", healthOk: "OpenClaw detectado", healthDown: "OpenClaw não encontrado", nativeMode: "modo nativo — sem OpenClaw", recheck: "Reverificar",
@@ -619,9 +619,7 @@
       var sc = scores[0][slug];
       if (!sc) return h("button", { className: "ex-btn", onClick: function () { loadScore(slug); } }, t("scoreRun"));
       if (sc.loading) return h("span", { className: "ex-meta" }, "…");
-      if (!sc.ok) return sc.pro_required
-        ? h("span", { className: "ex-badge ex-badge-key", title: t("scoreProOnly") }, "Pro")
-        : h("span", { className: "ex-meta", title: sc.error || "" }, "?");
+      if (!sc.ok) return h("span", { className: "ex-meta", title: sc.error || "" }, "?");
       var recoMap = { recommended: t("recoYes"), caution: t("recoCaution"), not_recommended: t("recoNo") };
       var reco = recoMap[sc.recommendation];
       var dims = sc.dimensions || [];
@@ -796,8 +794,7 @@
             (r && r.stale) ? h("span", { className: "ex-notice" }, "⚠ " + t("cachedNotice")) : null,
             (total) ? h("span", { className: "ex-meta" }, total + " " + t("resultsTotal")) : null,
             (r && r.expanded && r.expanded.length) ? h("span", { className: "ex-badge ex-badge-ok", title: t("alsoSearched") }, "+ " + r.expanded.join(", ")) : null,
-            isPro ? h("button", { key: "all", className: "ex-btn", style: { marginLeft: "auto" }, onClick: scoreAll,
-              disabled: scoringAll[0] || !(r && r.ok && (r.skills || []).length) }, scoringAll[0] ? t("scoreAllRun") : t("scoreAll")) : null),
+            null),
           loading[0] ? h("div", { className: "ex-loadwrap" }, [
             h("div", { key: "bar", className: "ex-loadbar" }),
             h("div", { key: "txt", className: "ex-searching-row" }, [
@@ -972,8 +969,7 @@
       ]);
       var body = null;
       if (sc && !sc.ok) {
-        body = sc.pro_required ? h("div", { key: "p", className: "ex-notice" }, t("scoreProOnly"))
-          : h("div", { key: "e", className: "ex-status-bad" }, sc.error || "?");
+        body = h("div", { key: "e", className: "ex-status-bad" }, sc.error || "?");
       } else if (sc && sc.ok && scoreOpen[0]) {
         body = h("div", { key: "c", className: "ex-score", style: { marginTop: ".5rem" } }, [
           (sc.capabilities && sc.capabilities.length) ? h("div", { key: "caps", className: "ex-badges", style: { marginBottom: ".5rem" } },
@@ -1033,9 +1029,7 @@
       var rv = runs[0];
       if (!rv) return h("div", { key: "runs", className: "ex-runs" }, h("div", { className: "ex-meta" }, "…"));
       if (!rv.ok) {
-        return rv.pro_required
-          ? h("div", { key: "runs", className: "ex-runs" }, h("div", { className: "ex-notice" }, t("runsProOnly")))
-          : null;
+        return null;
       }
       var sm = rv.summary || {}; var list = rv.runs || [];
       return h("div", { key: "runs", className: "ex-runs" }, [
@@ -1377,7 +1371,7 @@
     if (!d) return h("div", { className: "ex-section" }, h("div", { className: "ex-section-title" }, t("auditTitle")), h("div", { className: "ex-empty" }, t("loadingStatus")));
     if (!d.ok) return h("div", { className: "ex-section" },
       h("div", { className: "ex-section-title" }, t("auditTitle")),
-      h("div", { className: "ex-notice" }, d.pro_required ? t("auditNeedsPro") : (d.error || "?")));
+      h("div", { className: "ex-notice" }, d.error || "?"));
     var recs = d.records || [];
     return h("div", { className: "ex-section" },
       h("div", { className: "ex-section-title" }, t("auditTitle") + " (" + recs.length + ")"),
@@ -1556,7 +1550,6 @@
     }
     var hv = health[0];
     var marketOpts = ((mkts[0] && mkts[0].length) ? mkts[0] : [{ id: "clawhub", label: "ClawHub" }, { id: "skillhub", label: "SkillHub.cn" }]);
-    if (proView[0]) return renderProPage();
     var sv = status[0];
     return h("div", { className: "ex-section" },
       h("div", { className: "ex-section-title" }, t("settingsTitle")),
@@ -1752,7 +1745,7 @@
     useEffect(function () { api("/status").then(st[1]).catch(function () { st[1]({ ok: false }); }); }, []);
 
     function pushMsg(role, text) { msgs[1](function (prev) { return prev.concat([{ role: role, text: text }]); }); }
-    var QA_INTENT = { qaInstalledHealth: "health", qaTop10: "recommend", qaDiagnose: "diagnose", qaAudit: "audit", qaMore: "about" };
+    var QA_INTENT = { };
     // The bottom "Skill butler" — talks to the deterministic /assistant endpoint
     // (plugin-native, no LLM/terminal noise) and renders readable Markdown replies.
     function ask(intent, qtext, label) {
@@ -2168,9 +2161,7 @@
       })),
       tab[0] === "search" ? h(SearchPanel, { pro: pro[0] }) : null,
       tab[0] === "installed" ? h(InstalledPanel, null) : null,
-      tab[0] === "convert" && pro[0] ? h(ConvertedLibraryPanel, null) : null,
       tab[0] === "favorites" ? h(FavoritesPanel, null) : null,
-      tab[0] === "agent" ? h(AgentPanel, { pro: pro[0] }) : null,
       tab[0] === "runtime" ? h(RunPanel, null) : null,
       tab[0] === "audit" ? h(AuditPanel, null) : null,
       tab[0] === "settings" ? h(SettingsPanel, null) : null,
