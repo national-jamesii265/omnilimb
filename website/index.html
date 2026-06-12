@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Omnilimb — give your Hermes agent hands & feet</title>
+<meta name="description" content="Omnilimb is a free, open-source Hermes plugin that runs OpenClaw / ClawHub community skills, an isolated sandbox, a Playwright browser and multi-language runtimes as deterministic structured-JSON tools — zero extra LLM tokens on the execution path." />
+<link rel="canonical" href="https://www.omnilimb.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Omnilimb — give your Hermes agent hands & feet" />
+<meta property="og:description" content="Free & open-source Hermes plugin: run community skills, sandbox, browser and runtimes as deterministic tools. Zero extra LLM tokens." />
+<meta property="og:url" content="https://www.omnilimb.com/" />
+<meta property="og:image" content="https://www.omnilimb.com/og.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0e14'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%2336e0c0' font-family='Arial'%3EO%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --bg:#0c0e14; --panel:#141824; --panel2:#1b2030; --line:#27304a;
+    --txt:#e8ecf6; --muted:#9aa4be; --brand:#5b8cff; --brand2:#36e0c0; --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:radial-gradient(1200px 600px at 72% -10%,#1a2238 0,transparent 60%),var(--bg);
+    color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;}
+  a{color:var(--brand);text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;gap:12px;flex-wrap:wrap}
+  .logo{font-weight:700;font-size:20px;letter-spacing:.3px}
+  .logo span{color:var(--brand2)}
+  .nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .nav a{color:var(--muted);font-size:14px}
+  .nav a:hover{color:var(--txt)}
+  .langsw{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .langsw button{background:transparent;color:var(--muted);border:0;padding:6px 12px;font-size:13px;cursor:pointer}
+  .langsw button.active{background:var(--panel2);color:var(--txt)}
+  .langsw button:focus-visible,.btn:focus-visible,.nav a:focus-visible{outline:2px solid var(--brand2);outline-offset:2px}
+  .hero{padding:54px 0 24px;text-align:center}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.4px;padding:5px 13px;border-radius:999px;border:1px solid #2c4a44;background:#0e1f1b;color:var(--brand2)}
+  .hero h1{font-size:44px;line-height:1.12;margin:16px 0 12px}
+  .hero p.sub{color:var(--muted);font-size:19px;max-width:680px;margin:0 auto}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:12px;font-weight:600;
+    border:1px solid var(--line);background:var(--panel2);color:var(--txt);cursor:pointer}
+  .btn.primary{background:var(--brand);border-color:var(--brand);color:#08101f}
+  .btn:hover{transform:translateY(-1px)}
+  .section-title{text-align:center;font-size:28px;margin:54px 0 6px}
+  .section-sub{text-align:center;color:var(--muted);margin:0 auto 22px;max-width:640px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  .ic{font-size:22px;display:block;margin-bottom:6px}
+  pre{background:#0a0d15;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;font-size:13px;color:#cdd6f4}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--brand2);border-radius:12px;padding:18px 20px;margin:24px 0;color:var(--muted)}
+  .note b{color:var(--txt)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.two{grid-template-columns:1fr}}
+  footer{border-top:1px solid var(--line);margin-top:54px;padding:24px 0;color:var(--muted);font-size:13px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Omni<span>limb</span></div>
+    <nav class="nav">
+      <a href="#features" data-t="navFeatures">Features</a>
+      <a href="#start" data-t="navStart">Get started</a>
+      <a href="https://github.com/seanyang1983/omnilimb" target="_blank" rel="noopener">GitHub</a>
+      <div class="langsw" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="zh">中文</button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge" data-t="badge">Free &amp; open source · MIT · early community edition</span>
+    <h1 data-t="heroTitle">Give your Hermes agent hands &amp; feet.</h1>
+    <p class="sub" data-t="heroSub">Omnilimb runs OpenClaw / ClawHub community skills, an isolated sandbox, a Playwright browser and multi-language runtimes as deterministic structured-JSON tools the agent calls directly — zero extra LLM tokens on the execution path.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/seanyang1983/omnilimb" target="_blank" rel="noopener" data-t="ctaGithub">Get it on GitHub</a>
+      <a class="btn" href="#features" data-t="ctaFeatures">See what it does</a>
+    </div>
+  </section>
+
+  <h2 class="section-title" data-t="whatTitle">The brain has Omnilimb; you keep the brain</h2>
+  <p class="section-sub" data-t="whatSub">Hermes is the brain. Omnilimb is the deterministic execution substrate — it never calls a model itself on the execution path, and adds no extra LLM tokens. Compatible with OpenClaw &amp; ClawHub; not affiliated with them.</p>
+
+  <h2 class="section-title" id="features" data-t="featTitle">What it does</h2>
+  <p class="section-sub" data-t="featSub">A small set of structured-JSON tools your agent can call directly.</p>
+  <div class="grid">
+    <div class="card"><span class="ic">🔎</span><h3 data-t="f1t">Find &amp; install skills</h3><p data-t="f1d">Search the ClawHub / SkillHub registries and install skills by slug, git repo, or local path — with verification.</p></div>
+    <div class="card"><span class="ic">⚙️</span><h3 data-t="f2t">Run deterministically</h3><p data-t="f2d">Execute a skill's script entrypoint with retry and rollback — no second AI loop, no inference overhead.</p></div>
+    <div class="card"><span class="ic">📦</span><h3 data-t="f3t">Isolated sandbox</h3><p data-t="f3d">Run untrusted commands in a Docker sandbox with the network off by default and instant rollback.</p></div>
+    <div class="card"><span class="ic">🌐</span><h3 data-t="f4t">Browser automation</h3><p data-t="f4d">Drive a Playwright browser through a structured action list.</p></div>
+    <div class="card"><span class="ic">🧩</span><h3 data-t="f5t">Multi-language runtimes</h3><p data-t="f5d">Run quick snippets in python / node / bash / ruby / go.</p></div>
+    <div class="card"><span class="ic">🗂️</span><h3 data-t="f6t">Manage installed skills</h3><p data-t="f6d">List, view/edit, smoke-test, import/export and uninstall installed skills.</p></div>
+    <div class="card"><span class="ic">🧭</span><h3 data-t="f7t">Discovery &amp; health check</h3><p data-t="f7d">Browse leaderboards across markets and run a per-skill health check (体检) before you install.</p></div>
+    <div class="card"><span class="ic">📝</span><h3 data-t="f8t">Audit log</h3><p data-t="f8d">An optional local JSONL audit log of tool calls you can view in the dashboard.</p></div>
+    <div class="card"><span class="ic">🔁</span><h3 data-t="f9t">Two backends</h3><p data-t="f9d">Bridge to the real openclaw / clawhub CLIs, or run a fully decoupled native Python substrate — no Node needed.</p></div>
+  </div>
+
+  <h2 class="section-title" id="start" data-t="startTitle">Get started</h2>
+  <p class="section-sub" data-t="startSub">Install the plugin into your Hermes home and enable it.</p>
+  <div class="two">
+    <div>
+      <p style="color:var(--muted);font-size:14px" data-t="startPip">As a pip package:</p>
+      <pre>pip install omnilimb
+hermes plugins enable omnilimb</pre>
+    </div>
+    <div>
+      <p style="color:var(--muted);font-size:14px" data-t="startDir">Or as a directory plugin:</p>
+      <pre>cp -r omnilimb ~/.hermes/plugins/omnilimb
+hermes plugins enable omnilimb</pre>
+    </div>
+  </div>
+
+  <div class="note" id="license">
+    <b data-t="licTitle">License &amp; editions</b><br/>
+    <span data-t="licBody">This is an early test / community edition, licensed under MIT — free to use. A future stable version will adopt an AGPLv3 + commercial dual-license; please plan accordingly.</span>
+  </div>
+
+  <footer>
+    <div data-t="footLeft">© Omnilimb · omnilimb.com — Compatible with OpenClaw &amp; ClawHub, not affiliated.</div>
+    <div><a href="https://github.com/seanyang1983/omnilimb" target="_blank" rel="noopener" data-t="footRight">Source &amp; docs on GitHub</a></div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var STR = {
+    en: {
+      navFeatures:"Features", navStart:"Get started",
+      badge:"Free & open source · MIT · early community edition",
+      heroTitle:"Give your Hermes agent hands & feet.",
+      heroSub:"Omnilimb runs OpenClaw / ClawHub community skills, an isolated sandbox, a Playwright browser and multi-language runtimes as deterministic structured-JSON tools the agent calls directly — zero extra LLM tokens on the execution path.",
+      ctaGithub:"Get it on GitHub", ctaFeatures:"See what it does",
+      whatTitle:"Hermes is the brain. Omnilimb is the hands & feet.",
+      whatSub:"Omnilimb is the deterministic execution substrate — it never calls a model itself on the execution path, and adds no extra LLM tokens. Compatible with OpenClaw & ClawHub; not affiliated with them.",
+      featTitle:"What it does", featSub:"A small set of structured-JSON tools your agent can call directly.",
+      f1t:"Find & install skills", f1d:"Search the ClawHub / SkillHub registries and install skills by slug, git repo, or local path — with verification.",
+      f2t:"Run deterministically", f2d:"Execute a skill's script entrypoint with retry and rollback — no second AI loop, no inference overhead.",
+      f3t:"Isolated sandbox", f3d:"Run untrusted commands in a Docker sandbox with the network off by default and instant rollback.",
+      f4t:"Browser automation", f4d:"Drive a Playwright browser through a structured action list.",
+      f5t:"Multi-language runtimes", f5d:"Run quick snippets in python / node / bash / ruby / go.",
+      f6t:"Manage installed skills", f6d:"List, view/edit, smoke-test, import/export and uninstall installed skills.",
+      f7t:"Discovery & health check", f7d:"Browse leaderboards across markets and run a per-skill health check before you install.",
+      f8t:"Audit log", f8d:"An optional local JSONL audit log of tool calls you can view in the dashboard.",
+      f9t:"Two backends", f9d:"Bridge to the real openclaw / clawhub CLIs, or run a fully decoupled native Python substrate — no Node needed.",
+      startTitle:"Get started", startSub:"Install the plugin into your Hermes home and enable it.",
+      startPip:"As a pip package:", startDir:"Or as a directory plugin:",
+      licTitle:"License & editions",
+      licBody:"This is an early test / community edition, licensed under MIT — free to use. A future stable version will adopt an AGPLv3 + commercial dual-license; please plan accordingly.",
+      footLeft:"© Omnilimb · omnilimb.com — Compatible with OpenClaw & ClawHub, not affiliated.",
+      footRight:"Source & docs on GitHub"
+    },
+    zh: {
+      navFeatures:"功能", navStart:"快速开始",
+      badge:"免费 · 开源 · MIT · 早期社区版",
+      heroTitle:"给你的 Hermes 智能体装上手和脚。",
+      heroSub:"Omnilimb 把 OpenClaw / ClawHub 社区技能、隔离沙箱、Playwright 浏览器和多语言运行时，变成智能体可直接调用的、确定性的结构化 JSON 工具 —— 执行路径零额外 LLM token。",
+      ctaGithub:"前往 GitHub 获取", ctaFeatures:"看看它能做什么",
+      whatTitle:"Hermes 是大脑，Omnilimb 是手和脚。",
+      whatSub:"Omnilimb 是确定性的执行底座 —— 执行路径上从不自己调用模型，不额外消耗 LLM token。兼容 OpenClaw 与 ClawHub，但与其无官方关联。",
+      featTitle:"它能做什么", featSub:"一组智能体可直接调用的结构化 JSON 工具。",
+      f1t:"查找并安装技能", f1d:"搜索 ClawHub / SkillHub 市场，按 slug、git 仓库或本地路径安装技能，并做校验。",
+      f2t:"确定性执行", f2d:"运行技能脚本入口，带重试与回滚 —— 不跑第二层 AI、零推理开销。",
+      f3t:"隔离沙箱", f3d:"在 Docker 沙箱中运行不可信命令，默认关闭网络、即时回滚。",
+      f4t:"浏览器自动化", f4d:"用结构化动作列表驱动 Playwright 浏览器。",
+      f5t:"多语言运行时", f5d:"快速运行 python / node / bash / ruby / go 代码片段。",
+      f6t:"管理已安装技能", f6d:"列出、查看/编辑、冒烟测试、导入/导出与卸载已安装技能。",
+      f7t:"发现与体检", f7d:"跨市场浏览榜单，安装前对单个技能做体检评分。",
+      f8t:"审计日志", f8d:"可选的本地 JSONL 审计日志，可在仪表盘查看工具调用记录。",
+      f9t:"双后端", f9d:"既能桥接真实的 openclaw / clawhub CLI，也能用完全脱钩的原生 Python 底座 —— 无需 Node。",
+      startTitle:"快速开始", startSub:"把插件装进你的 Hermes 主目录并启用。",
+      startPip:"作为 pip 包安装：", startDir:"或作为目录插件：",
+      licTitle:"许可与版本",
+      licBody:"当前为早期测试 / 社区版，授权协议为 MIT，可自由使用。未来稳定版将采用 AGPLv3 + 商业授权双许可，请注意规划。",
+      footLeft:"© Omnilimb · omnilimb.com —— 兼容 OpenClaw 与 ClawHub，无官方关联。",
+      footRight:"在 GitHub 查看源码与文档"
+    }
+  };
+  var LANGS = { en:"en", zh:"zh-Hans" };
+  function pick(){
+    try { var s = localStorage.getItem("omnilimb.lang"); if (s && STR[s]) return s; } catch(e){}
+    var n = (navigator.language || "en").toLowerCase();
+    if (n.indexOf("zh") === 0) return "zh";
+    return "en";
+  }
+  function setLang(lang){
+    if (!STR[lang]) lang = "en";
+    var d = STR[lang];
+    document.documentElement.lang = LANGS[lang] || "en";
+    document.querySelectorAll("[data-t]").forEach(function(el){
+      var k = el.getAttribute("data-t");
+      if (d[k] != null) el.textContent = d[k];
+    });
+    document.querySelectorAll(".langsw button").forEach(function(b){
+      b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+      b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("omnilimb.lang", lang); } catch(e){}
+  }
+  document.querySelectorAll(".langsw button").forEach(function(b){
+    b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
+  });
+  setLang(pick());
+})();
+</script>
+</body>
+</html>

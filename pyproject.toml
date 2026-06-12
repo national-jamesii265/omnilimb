@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnilimb"
+version = "0.8.0"
+description = "Run ClawHub skills, sandbox, Playwright browser & multi-language runtimes as Hermes hands/feet. Structured JSON, zero extra LLM tokens."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "seanyang1983", email = "yase19636404@163.com" }]
+keywords = ["hermes", "openclaw", "clawhub", "agent", "sandbox", "playwright", "skills"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+]
+dependencies = [
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.44,<2"]
+dev = ["pytest>=8,<9"]
+
+# Hermes auto-discovers plugins exposed via this entry point group.
+[project.entry-points."hermes_agent.plugins"]
+omnilimb = "omnilimb"
+
+[project.urls]
+Homepage = "https://github.com/seanyang1983/omnilimb"
+Issues = "https://github.com/seanyang1983/omnilimb/issues"
+
+[tool.setuptools]
+packages = ["omnilimb", "omnilimb.backends", "omnilimb.dashboard"]
+
+[tool.setuptools.package-data]
+omnilimb = ["plugin.yaml", "skills/**/*.md"]
+"omnilimb.dashboard" = ["manifest.json", "plugin_api.py", "dist/*"]

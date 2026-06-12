@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+.pytest_cache/
+.hypothesis/
+.venv/
+venv/
+*.zip
+.DS_Store
+
+# Leftover local test-output scratch files
+_pt.txt
+_t_out.txt
+_as_out.txt
+_*_out.txt
+
+# Vendor license-signing private key — NEVER commit.
+.secrets/
+
+# Internal IDE / spec tooling (not part of the published product)
+.kiro/
+
+# Local deploy credentials — NEVER commit
+.deploy.local.json

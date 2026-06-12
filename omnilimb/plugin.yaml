@@ -1,0 +1,25 @@
+name: omnilimb
+version: 0.8.0
+description: "Run ClawHub skills, sandbox, Playwright browser & multi-language runtimes as Hermes hands/feet. Structured JSON, zero extra LLM tokens."
+author: "seanyang1983 <yase19636404@163.com>"
+
+# General (standalone) plugin — exposes tools the LLM can call.
+# Discovered by Hermes PluginManager. Opt-in via `plugins.enabled`.
+
+provides_tools:
+  - claw_skill_search
+  - claw_skill_install
+  - claw_skill_run
+  - claw_sandbox_exec
+  - claw_browser
+  - claw_runtime
+  - claw_skill_list
+  - claw_skill_runs
+
+# Secrets only. Non-secret settings live in config.yaml under `omnilimb:`.
+# All entries are OPTIONAL — the plugin degrades gracefully when missing.
+requires_env:
+  - name: CLAWHUB_TOKEN
+    description: "ClawHub registry token (only needed to publish or access private skills)"
+    url: "https://clawhub.ai"
+    secret: true
