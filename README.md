@@ -10,6 +10,11 @@
   <a href="https://www.omnilimb.com"><img alt="Website" src="https://img.shields.io/badge/web-omnilimb.com-9aa4be.svg"></a>
 </p>
 
+<p align="center">
+  <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+  &nbsp;|&nbsp; 🌐 <a href="https://www.omnilimb.com">omnilimb.com</a>
+</p>
+
 # Omnilimb
 
 **Your Hermes agent is the brain. Omnilimb is the hands and feet.**
@@ -143,9 +148,30 @@ appears (after *Skills*) with:
 
 The UI follows the active dashboard theme and language automatically.
 
+### See it in action
+
+Search any topic — here a live ClawHub search for **PPT** across the marketplace:
+
 <p align="center">
-  <img src="docs/assets/website.png" alt="The Omnilimb website at omnilimb.com" width="92%" />
+  <img src="docs/assets/ui-search.jpg" alt="Omnilimb dashboard: live skill search for PPT" width="90%" />
 </p>
+
+Run a one-click **health check (体检)** before you install — a transparent,
+rule-based 0–100 score across trust, completeness, Hermes-compatibility,
+maintenance and safety:
+
+<p align="center">
+  <img src="docs/assets/ui-healthcheck.jpg" alt="Omnilimb per-skill health check with score breakdown" width="90%" />
+</p>
+
+Manage everything you've installed — view/edit, smoke-test, credentials,
+import/export, uninstall:
+
+<p align="center">
+  <img src="docs/assets/ui-installed.jpg" alt="Omnilimb installed-skills management" width="90%" />
+</p>
+
+> 🌐 Project site: **[omnilimb.com](https://www.omnilimb.com)**
 
 ## Configure (`~/.hermes/config.yaml`)
 
