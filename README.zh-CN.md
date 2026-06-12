@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/banner.svg" alt="Omnilimb — 给你的 Hermes 智能体装上手和脚" width="100%" />
+  <img src="docs/assets/banner-zh.svg" alt="Omnilimb — 给你的 Hermes 智能体装上手和脚" width="100%" />
 </p>
 
 <p align="center">
@@ -46,7 +46,7 @@ JSON 工具**,由智能体直接调用——因此**执行路径上零额外 LLM
   几行代码加一个你自己的适配器。
 
 <p align="center">
-  <img src="docs/assets/architecture.svg" alt="Omnilimb 架构:Hermes 大脑 → Omnilimb 确定性工具 → 技能/沙箱/浏览器/运行时" width="100%" />
+  <img src="docs/assets/architecture-zh.svg" alt="Omnilimb 架构:Hermes 大脑 → Omnilimb 确定性工具 → 技能/沙箱/浏览器/运行时" width="100%" />
 </p>
 
 ## 工具一览
@@ -65,7 +65,7 @@ Omnilimb 向智能体注册以下结构化 JSON 工具:
 | `claw_skill_runs` | 已安装技能的运行历史(诊断) |
 
 <p align="center">
-  <img src="docs/assets/tools.svg" alt="Omnilimb 的八个工具与可选仪表盘 UI" width="100%" />
+  <img src="docs/assets/tools-zh.svg" alt="Omnilimb 的八个工具与可选仪表盘 UI" width="100%" />
 </p>
 
 ## 快速开始
