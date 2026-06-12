@@ -30,6 +30,10 @@ path** and no second "agent loop" burning your budget.
 > ℹ️ Compatible with OpenClaw &amp; ClawHub; not affiliated with them.
 > "Omnilimb" is an independent product ([omnilimb.com](http://www.omnilimb.com)).
 
+```bash
+pip install omnilimb        # then: hermes plugins enable omnilimb
+```
+
 ---
 
 ## Why Omnilimb

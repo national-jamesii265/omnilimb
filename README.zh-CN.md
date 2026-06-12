@@ -29,6 +29,10 @@ JSON 工具**,由智能体直接调用——因此**执行路径上零额外 LLM
 > ℹ️ 兼容 OpenClaw 与 ClawHub,但与其无官方关联。
 > "Omnilimb" 是独立产品([omnilimb.com](http://www.omnilimb.com))。
 
+```bash
+pip install omnilimb        # 然后:hermes plugins enable omnilimb
+```
+
 ---
 
 ## 为什么用 Omnilimb
