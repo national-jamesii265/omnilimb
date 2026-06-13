@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="docs/assets/banner-zh.svg" alt="Omnilimb — 给你的 Hermes 智能体装上手和脚" width="100%" />
+  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/banner-zh.svg" alt="Omnilimb — 给你的 Hermes 智能体装上手和脚" width="100%" />
 </p>
 
 <p align="center">
   <a href="https://pypi.org/project/omnilimb/"><img alt="PyPI" src="https://img.shields.io/pypi/v/omnilimb.svg?color=5b8cff"></a>
   <a href="https://pepy.tech/project/omnilimb"><img alt="Downloads" src="https://static.pepy.tech/badge/omnilimb"></a>
   <a href="https://github.com/seanyang1983/omnilimb/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/seanyang1983/omnilimb?color=36e0c0&label=stars"></a>
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-36e0c0.svg"></a>
+  <a href="https://github.com/seanyang1983/omnilimb/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-36e0c0.svg"></a>
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-5b8cff.svg">
   <img alt="Status" src="https://img.shields.io/badge/edition-free%20community-5b8cff.svg">
   <img alt="Tokens" src="https://img.shields.io/badge/execution%20path-0%20extra%20LLM%20tokens-36e0c0.svg">
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> · <b>简体中文</b>
+  <a href="https://github.com/seanyang1983/omnilimb/blob/main/README.md">English</a> · <b>简体中文</b>
   &nbsp;|&nbsp; 🌐 <a href="https://www.omnilimb.com">omnilimb.com</a>
 </p>
 
@@ -53,7 +53,7 @@ pip install omnilimb        # 然后:hermes plugins enable omnilimb
   几行代码加一个你自己的适配器。
 
 <p align="center">
-  <img src="docs/assets/architecture-zh.svg" alt="Omnilimb 架构:Hermes 大脑 → Omnilimb 确定性工具 → 技能/沙箱/浏览器/运行时" width="100%" />
+  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/architecture-zh.svg" alt="Omnilimb 架构:Hermes 大脑 → Omnilimb 确定性工具 → 技能/沙箱/浏览器/运行时" width="100%" />
 </p>
 
 ## 工具一览
@@ -72,7 +72,7 @@ Omnilimb 向智能体注册以下结构化 JSON 工具:
 | `claw_skill_runs` | 已安装技能的运行历史(诊断) |
 
 <p align="center">
-  <img src="docs/assets/tools-zh.svg" alt="Omnilimb 的八个工具与可选仪表盘 UI" width="100%" />
+  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/tools-zh.svg" alt="Omnilimb 的八个工具与可选仪表盘 UI" width="100%" />
 </p>
 
 ## 快速开始
@@ -156,9 +156,9 @@ UI 会自动跟随当前仪表盘的主题与语言。
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="docs/assets/ui-search-zh.jpg"><img src="docs/assets/ui-search-zh.jpg" alt="实时搜索 PPT 技能"/></a><br/><sub><b>搜索</b> —— 对「PPT」的实时 ClawHub 搜索。</sub></td>
-<td width="33%" valign="top"><a href="docs/assets/ui-healthcheck-zh.jpg"><img src="docs/assets/ui-healthcheck-zh.jpg" alt="单技能体检与评分明细"/></a><br/><sub><b>体检</b> —— 透明的 0–100 分。</sub></td>
-<td width="33%" valign="top"><a href="docs/assets/ui-installed-zh.jpg"><img src="docs/assets/ui-installed-zh.jpg" alt="已安装技能管理"/></a><br/><sub><b>已安装</b> —— 统一管理你装的技能。</sub></td>
+<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-search-zh.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-search-zh.jpg" alt="实时搜索 PPT 技能"/></a><br/><sub><b>搜索</b> —— 对「PPT」的实时 ClawHub 搜索。</sub></td>
+<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-healthcheck-zh.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-healthcheck-zh.jpg" alt="单技能体检与评分明细"/></a><br/><sub><b>体检</b> —— 透明的 0–100 分。</sub></td>
+<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-installed-zh.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-installed-zh.jpg" alt="已安装技能管理"/></a><br/><sub><b>已安装</b> —— 统一管理你装的技能。</sub></td>
 </tr>
 </table>
 
@@ -192,7 +192,7 @@ omnilimb:
 第三方技能是不可信代码。对不完全信任的东西,优先用 `claw_sandbox_exec` 并设
 `network: false`。没有 Docker 时,沙箱调用在本地运行并标记 `"sandboxed": false`。
 技能文件操作与卸载有路径穿越防护;压缩包解压有 zip-slip 防护。漏洞上报见
-[`SECURITY.md`](SECURITY.md)。
+[`SECURITY.md`](https://github.com/seanyang1983/omnilimb/blob/main/SECURITY.md)。
 
 ## 开发
 
@@ -202,7 +202,7 @@ pytest -q
 ```
 
 架构规则(插件从不导入或修改 Hermes 核心,每个处理函数返回 JSON 且从不抛异常)、
-以及如何添加市场或后端,见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
+以及如何添加市场或后端,见 [`CONTRIBUTING.md`](https://github.com/seanyang1983/omnilimb/blob/main/CONTRIBUTING.md)。
 
 ## 许可与版本
 
@@ -213,4 +213,4 @@ pytest -q
 技能这件事上功能完整。商业/Pro 能力(技能 → 原生 Hermes 转换、AI 策展、精选包、
 自动更新、助手控制台)**不属于**本版本,计划在未来 Pro 版本以单独协议发布。
 
-MIT —— 见 [`LICENSE`](LICENSE)。与 OpenClaw / ClawHub 无官方关联。
+MIT —— 见 [`LICENSE`](https://github.com/seanyang1983/omnilimb/blob/main/LICENSE)。与 OpenClaw / ClawHub 无官方关联。

@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="docs/assets/banner.svg" alt="Omnilimb — give your Hermes agent hands & feet" width="100%" />
+  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/banner.svg" alt="Omnilimb — give your Hermes agent hands & feet" width="100%" />
 </p>
 
 <p align="center">
   <a href="https://pypi.org/project/omnilimb/"><img alt="PyPI" src="https://img.shields.io/pypi/v/omnilimb.svg?color=5b8cff"></a>
   <a href="https://pepy.tech/project/omnilimb"><img alt="Downloads" src="https://static.pepy.tech/badge/omnilimb"></a>
   <a href="https://github.com/seanyang1983/omnilimb/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/seanyang1983/omnilimb?color=36e0c0&label=stars"></a>
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-36e0c0.svg"></a>
+  <a href="https://github.com/seanyang1983/omnilimb/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-36e0c0.svg"></a>
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-5b8cff.svg">
   <img alt="Status" src="https://img.shields.io/badge/edition-free%20community-5b8cff.svg">
   <img alt="Tokens" src="https://img.shields.io/badge/execution%20path-0%20extra%20LLM%20tokens-36e0c0.svg">
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+  <b>English</b> · <a href="https://github.com/seanyang1983/omnilimb/blob/main/README.zh-CN.md">简体中文</a>
   &nbsp;|&nbsp; 🌐 <a href="https://www.omnilimb.com">omnilimb.com</a>
 </p>
 
@@ -54,7 +54,7 @@ pip install omnilimb        # then: hermes plugins enable omnilimb
   GitHub index — or add your own adapter in a few lines.
 
 <p align="center">
-  <img src="docs/assets/architecture.svg" alt="How Omnilimb fits: Hermes brain → Omnilimb deterministic tools → skills/sandbox/browser/runtime" width="100%" />
+  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/architecture.svg" alt="How Omnilimb fits: Hermes brain → Omnilimb deterministic tools → skills/sandbox/browser/runtime" width="100%" />
 </p>
 
 ## The tools
@@ -73,7 +73,7 @@ Omnilimb registers these structured-JSON tools the agent can call:
 | `claw_skill_runs` | Recent run history for installed skills (diagnostics) |
 
 <p align="center">
-  <img src="docs/assets/tools.svg" alt="The eight Omnilimb tools plus the optional dashboard UI" width="100%" />
+  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/tools.svg" alt="The eight Omnilimb tools plus the optional dashboard UI" width="100%" />
 </p>
 
 ## Quickstart
@@ -162,9 +162,9 @@ score, and installed-skill management — all in the dashboard tab (click to enl
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="docs/assets/ui-search.jpg"><img src="docs/assets/ui-search.jpg" alt="Live skill search for PPT across markets"/></a><br/><sub><b>Search</b> — live ClawHub results for “PPT”.</sub></td>
-<td width="33%" valign="top"><a href="docs/assets/ui-healthcheck.jpg"><img src="docs/assets/ui-healthcheck.jpg" alt="Per-skill health check with score breakdown"/></a><br/><sub><b>Health check</b> — transparent 0–100 score.</sub></td>
-<td width="33%" valign="top"><a href="docs/assets/ui-installed.jpg"><img src="docs/assets/ui-installed.jpg" alt="Installed-skills management"/></a><br/><sub><b>Installed</b> — manage everything you’ve added.</sub></td>
+<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-search.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-search.jpg" alt="Live skill search for PPT across markets"/></a><br/><sub><b>Search</b> — live ClawHub results for “PPT”.</sub></td>
+<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-healthcheck.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-healthcheck.jpg" alt="Per-skill health check with score breakdown"/></a><br/><sub><b>Health check</b> — transparent 0–100 score.</sub></td>
+<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-installed.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-installed.jpg" alt="Installed-skills management"/></a><br/><sub><b>Installed</b> — manage everything you’ve added.</sub></td>
 </tr>
 </table>
 
@@ -200,7 +200,7 @@ Third-party skills are untrusted code. Prefer `claw_sandbox_exec` with
 `network: false` for anything you don't fully trust. Without Docker, sandbox
 calls run locally and are flagged `"sandboxed": false`. Skill file operations
 and uninstall are path-traversal guarded; archive extraction is zip-slip
-protected. See [`SECURITY.md`](SECURITY.md) to report a vulnerability.
+protected. See [`SECURITY.md`](https://github.com/seanyang1983/omnilimb/blob/main/SECURITY.md) to report a vulnerability.
 
 ## Development
 
@@ -209,7 +209,7 @@ pip install -e ".[dev,browser]"
 pytest -q
 ```
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the architecture rules (the plugin
+See [`CONTRIBUTING.md`](https://github.com/seanyang1983/omnilimb/blob/main/CONTRIBUTING.md) for the architecture rules (the plugin
 never imports or modifies Hermes core, every handler returns JSON and never
 raises) and how to add a market or backend.
 
@@ -225,4 +225,4 @@ skills locally. Commercial/Pro capabilities (skill → native Hermes conversion,
 AI curation, curated packs, auto-update, assistant console) are **not** part of
 this edition and are planned for a future Pro release under a separate license.
 
-MIT — see [`LICENSE`](LICENSE). Not affiliated with OpenClaw / ClawHub.
+MIT — see [`LICENSE`](https://github.com/seanyang1983/omnilimb/blob/main/LICENSE). Not affiliated with OpenClaw / ClawHub.
